@@ -174,9 +174,8 @@
 		6444F7FE29815C7F00879DCB /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				6444F8242981CB9500879DCB /* ApiDefaultSettings.swift */,
-				6444F7FF29815CBC00879DCB /* RequestStatuses.swift */,
 				6444F8202981966D00879DCB /* ParametersType.swift */,
+				6444F8242981CB9500879DCB /* ApiDefaultSettings.swift */,
 				6444F80129815DA600879DCB /* Errors */,
 			);
 			path = Helpers;
@@ -224,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				6444F8292981CF9400879DCB /* DirectionSide.swift */,
+				6444F7FF29815CBC00879DCB /* RequestStatuses.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";

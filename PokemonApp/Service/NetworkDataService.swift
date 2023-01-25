@@ -9,7 +9,7 @@ import Foundation
 
 class NetworkDataService {
 
-    var dataFetcher: DataFetcherType
+    private let dataFetcher: DataFetcherType
 
     init(
         dataFetcher: DataFetcher = DataFetcher(
