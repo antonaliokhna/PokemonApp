@@ -7,9 +7,19 @@
 
 import Foundation
 
-struct PokemonPreviewListModel: Identifiable {
-    let id = UUID()
+struct PokemonListModel: Codable {
+    let count: Int
+    let results: [PokemonPreviewListModel]
 
-    let name: String
-    let url: String
+    //MARK: PokemonPreviewListModel
+    struct PokemonPreviewListModel: Codable {
+        let name: String
+        let url: String
+    }
+}
+
+extension PokemonListModel.PokemonPreviewListModel: Identifiable {
+    var id: String {
+        return name
+    }
 }

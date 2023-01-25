@@ -25,4 +25,18 @@ class NetworkDataService {
             parameters: [:]
         )
     }
+
+    func fetchPreviewPokemonListBy(page: Int) async throws -> PokemonListModel {
+        let url = "https://pokeapi.co/api/v2/pokemon"
+
+        let parameters: Parameters = [
+            "offset": page * 50,
+            "limit": 50,
+        ]
+
+        return try await dataFetcher.fetchGenericData(
+            url: url,
+            parameters: parameters
+        )
+    }
 }

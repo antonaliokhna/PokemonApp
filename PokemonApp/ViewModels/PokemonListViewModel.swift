@@ -7,18 +7,34 @@
 
 import Foundation
 
-class PokemonListViewModel: ObservableObject {
+final class PokemonListViewModel: ObservableObject {
 
-    @Published var pokemonModels: [PokemonPreviewListModel] = []
+    private var newtork = NetworkDataService()
+
+    @Published var status: RequestStatuses = .loading
+    @Published var pokemonModels: [PokemonListModel.PokemonPreviewListModel] = []
 
     init() {
         //empty init...
     }
+}
 
-    func loadPokemons() {
-        pokemonModels = [
-            .init(name: "first", url: "https://pokeapi.co/api/v2/pokemon/10263/"),
-        ]
+extension PokemonListViewModel {
+    @MainActor
+    func loadPokemonsData() async {
+        do {
+            let models = try await newtork.fetchPreviewPokemonListBy(page: 0)
+
+            self.status = .sucsess
+            self.pokemonModels = models.results
+
+        } catch {
+            guard let error = error as? CustomError else {
+                self.status = .failed(error: .localError(error: .unknownError))
+
+                return
+            }
+            self.status = .failed(error: error)
+        }
     }
-
 }

@@ -49,8 +49,8 @@ struct PokemonListView: View {
             }
             .navigationTitle("Pokemons")
         }
-        .onAppear {
-            viewModel.loadPokemons()
+        .task {
+            await viewModel.loadPokemonsData()
         }
     }
 }
