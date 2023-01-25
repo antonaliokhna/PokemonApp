@@ -54,16 +54,13 @@ extension PokemonListViewModel {
         }
     }
 
-    func nextPage() {
-        currentPage.increment()
-
-        Task {
-            await loadPokemonsData()
+    func switchPage(side: DirectionSide) {
+        switch side {
+        case .left:
+            currentPage.decrement()
+        case .right:
+            currentPage.increment()
         }
-    }
-
-    func previousPage() {
-        currentPage.decrement()
 
         Task {
             await loadPokemonsData()
