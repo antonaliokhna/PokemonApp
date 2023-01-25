@@ -8,8 +8,8 @@
 import Foundation
 
 struct PokemonListModel: Codable {
-    let count: Int
-    let results: [PokemonPreviewListModel]
+    var count: Int = 0
+    var results: [PokemonPreviewListModel] = []
 
     //MARK: PokemonPreviewListModel
     struct PokemonPreviewListModel: Codable {

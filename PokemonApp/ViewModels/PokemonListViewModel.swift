@@ -13,21 +13,32 @@ final class PokemonListViewModel: ObservableObject {
     private var currentPage: Int = 0
 
     @Published var status: RequestStatuses = .loading
-    @Published var pokemonModels: [PokemonListModel.PokemonPreviewListModel] = []
+    @Published var pokemonModel: PokemonListModel = PokemonListModel()
+
+    var previousButtonDisable: Bool {
+        return self.currentPage < 1
+    }
+
+    var nextButtonDisable: Bool {
+        return pokemonModel.count < self.currentPage * 50 + 50
+    }
 
     init() {
         //empty init...
     }
+    
 }
 
 extension PokemonListViewModel {
     @MainActor
     func loadPokemonsData() async {
+        status = .loading
         do {
-            let models = try await newtork.fetchPreviewPokemonListBy(page: currentPage)
+            let model =
+                try await newtork.fetchPreviewPokemonListBy(page: currentPage)
 
+            self.pokemonModel = model
             self.status = .sucsess
-            self.pokemonModels = models.results
 
         } catch {
             guard let error = error as? CustomError else {
@@ -40,17 +51,14 @@ extension PokemonListViewModel {
     }
 
     func nextPage() {
-        self.status = .loading
         self.currentPage += 1
+
         Task {
             await loadPokemonsData()
         }
     }
 
     func previousPage() {
-        guard self.currentPage > 0 else { return }
-
-        self.status = .loading
         self.currentPage -= 1
 
         Task {

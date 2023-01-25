@@ -14,7 +14,7 @@ struct PokemonListView: View {
     var body: some View {
         NavigationView {
             VStack {
-                List(viewModel.pokemonModels) { model in
+                List(viewModel.pokemonModel.results) { model in
                     NavigationLink {
                         DetailPokemonView(
                             viewModel: DetailPokemonViewModel(
@@ -36,15 +36,17 @@ struct PokemonListView: View {
                     } label: {
                         Image(systemName: "arrowshape.turn.up.left.circle")
                     }
+                    .disabled(viewModel.previousButtonDisable)
 
                     Button {
                         viewModel.nextPage()
                     } label: {
                         Image(systemName: "arrowshape.turn.up.right.circle")
                     }
+                    .disabled(viewModel.nextButtonDisable)
                 }
                 .font(.largeTitle)
-                .foregroundColor(.green)
+                //.foregroundColor(.green)
 
             }
             .navigationTitle("Pokemons")
