@@ -8,7 +8,7 @@
 import Foundation
 
 enum RequestStatuses {
-    case failed
+    case failed(error: CustomError)
     case sucsess
     case loading
 }
