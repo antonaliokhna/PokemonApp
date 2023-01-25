@@ -13,7 +13,7 @@ struct DetailPokemonModel: Codable {
     let weight: Double
 
     private let types: [Types]
-    private let ability: [Ability]
+    private let abilities: [Ability]
 
     var type: String {
         types.map{$0.type.name}.joined(separator: ", ")
