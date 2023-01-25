@@ -20,10 +20,8 @@ class NetworkDataService {
     }
 
     func fetchDetailPokemonBy(url: String) async throws -> DetailPokemonModel {
-        let stringUrl = url
-
         return try await self.dataFetcher.fetchGenericData(
-            url: stringUrl,
+            url: url,
             parameters: [:]
         )
     }

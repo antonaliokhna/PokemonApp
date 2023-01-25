@@ -13,7 +13,6 @@ final class DetailPokemonViewModel: ObservableObject {
 
     @Published var status: RequestStatuses = .loading
 
-    //TODO: We have pokemon name on list view model
     @Published var name: String = ""
     @Published var type: String = ""
     @Published var weight: String = ""
@@ -21,9 +20,10 @@ final class DetailPokemonViewModel: ObservableObject {
     @Published var ability: String = ""
     @Published var isDefault: String = ""
 
-    private let url: URL
+    private let url: String
 
-    init(url: URL) {
+    init(name: String, url: String) {
+        self.name = name
         self.url = url
     }
 }
@@ -34,12 +34,9 @@ extension DetailPokemonViewModel {
     @MainActor
     func loadPokemonData() async {
         do {
-            let model = try await newtork.fetchDetailPokemonBy(
-                url: "https://pokeapi.co/api/v2/pokemon/10263/"
-            )
+            let model = try await newtork.fetchDetailPokemonBy(url: url)
 
             self.status = .sucsess
-            self.name = model.name
             self.type = model.type
             self.weight = model.weight.description
             self.height = model.height.description

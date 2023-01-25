@@ -16,11 +16,14 @@ struct PokemonListView: View {
             VStack {
                 List(viewModel.pokemonModels) { model in
                     NavigationLink {
-                        //TODO: For test
                         DetailPokemonView(
-                            viewModel: DetailPokemonViewModel(url: model.url)
+                            viewModel: DetailPokemonViewModel(
+                                name: model.name,
+                                url: model.url
+                            )
                         )
                     } label: {
+                        //TODO: Presentation text
                         Text(model.name)
                     }
                     .font(.title2)
