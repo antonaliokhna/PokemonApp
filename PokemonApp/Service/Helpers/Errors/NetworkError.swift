@@ -14,6 +14,7 @@ enum NetworkError: Error {
     case invalidURL
 }
 
+//MARK: LocalizedError
 extension NetworkError: LocalizedError {
     var errorDescription: String? {
         let description: String

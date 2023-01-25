@@ -13,7 +13,7 @@ enum CustomError: Error {
     case codableError(error: CodableError)
 }
 
-//MARK: LocalizedError protocol
+//MARK: LocalizedError
 extension CustomError: LocalizedError {
     var errorDescription: String? {
         let description: String?
@@ -30,7 +30,7 @@ extension CustomError: LocalizedError {
     }
 }
 
-//MARK: Getting error image
+//MARK: Getting error image path
 extension CustomError {
     var errorImagePath: String {
         let imagePath: String

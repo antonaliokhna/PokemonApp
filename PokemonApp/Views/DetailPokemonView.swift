@@ -90,8 +90,8 @@ struct DetailPokemonView_Previews: PreviewProvider {
         DetailPokemonView(
             viewModel: DetailPokemonViewModel(
                 service: NetworkDataService(),
-                name: "Pokemon1",
-                url: "https://pokeapi.co/api/v2/pokemon/10263/"
+                name: "Pokemon",
+                url: "https://pokeapi.co/api/v2/pokemon/10263"
             )
         )
     }

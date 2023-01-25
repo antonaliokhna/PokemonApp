@@ -31,23 +31,20 @@ struct DetailPokemonModel: Codable {
     }
 }
 
+//MARK: DetailPokemonModel structures
 extension DetailPokemonModel {
-    //MARK: Pokemon types struct
     struct Types: Codable {
         let type: Name
     }
 
-    //MARK: Pokemon ability struct
     struct Ability: Codable {
         let ability: Name
     }
 
-    //MARK: Name struct
     struct Name: Codable {
         let name: String
     }
 
-    //MARK: Sprites struct
     struct Sprites: Codable {
         let frontDefault: URL
     }

@@ -11,6 +11,7 @@ enum LocalError: Error {
     case unknownError
 }
 
+//MARK: LocalizedError
 extension LocalError: LocalizedError {
     var errorDescription: String? {
         let description: String

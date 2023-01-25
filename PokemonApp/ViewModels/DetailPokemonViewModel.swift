@@ -32,6 +32,7 @@ final class DetailPokemonViewModel: ObservableObject {
     }
 }
 
+//MARK: DetailPokemonViewModel internal functions
 extension DetailPokemonViewModel {
     @MainActor
     func loadPokemonData() async {

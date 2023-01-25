@@ -28,6 +28,7 @@ final class PokemonListViewModel: ObservableObject {
     }
 }
 
+//MARK: PokemonListViewModel internal functions
 extension PokemonListViewModel {
     @MainActor
     func loadPokemonsData() async {

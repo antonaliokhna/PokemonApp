@@ -24,7 +24,6 @@ struct PokemonListView: View {
                             )
                         )
                     } label: {
-                        //TODO: Presentation text
                         Text(model.name)
                     }
                     .font(.title2)
@@ -47,8 +46,6 @@ struct PokemonListView: View {
                     .disabled(viewModel.nextButtonDisable)
                 }
                 .font(.largeTitle)
-                //.foregroundColor(.green)
-
             }
             .navigationTitle("Pokemons")
         }

@@ -10,14 +10,17 @@ import Foundation
 struct PokemonListModel: Codable {
     var count: Int = 0
     var results: [PokemonPreviewListModel] = []
+}
 
-    //MARK: PokemonPreviewListModel
+//MARK: PokemonListModel structures
+extension PokemonListModel {
     struct PokemonPreviewListModel: Codable {
         let name: String
         let url: String
     }
 }
 
+//MARK: PokemonPreviewListModel Identifiable
 extension PokemonListModel.PokemonPreviewListModel: Identifiable {
     var id: String {
         return name
