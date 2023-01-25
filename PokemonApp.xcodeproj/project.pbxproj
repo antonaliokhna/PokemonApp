@@ -23,6 +23,8 @@
 		6444F8072981611E00879DCB /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6444F8062981611E00879DCB /* CustomError.swift */; };
 		6444F80A2981644900879DCB /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 6444F8092981644900879DCB /* Alamofire */; };
 		6444F811298166A600879DCB /* AFError + extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6444F810298166A600879DCB /* AFError + extensions.swift */; };
+		6444F8142981675C00879DCB /* AlamofireNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6444F8132981675C00879DCB /* AlamofireNetworkService.swift */; };
+		6444F816298167B500879DCB /* NetworkDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6444F815298167B500879DCB /* NetworkDataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		6444F80429815ED000879DCB /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		6444F8062981611E00879DCB /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		6444F810298166A600879DCB /* AFError + extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AFError + extensions.swift"; sourceTree = "<group>"; };
+		6444F8132981675C00879DCB /* AlamofireNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireNetworkService.swift; sourceTree = "<group>"; };
+		6444F815298167B500879DCB /* NetworkDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +137,8 @@
 		6444F7F929815B8100879DCB /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				6444F815298167B500879DCB /* NetworkDataService.swift */,
+				6444F8122981674D00879DCB /* Services */,
 				6444F7FA29815BB400879DCB /* DataCoders */,
 				6444F7FE29815C7F00879DCB /* Helpers */,
 			);
@@ -172,6 +178,14 @@
 				6444F810298166A600879DCB /* AFError + extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6444F8122981674D00879DCB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				6444F8132981675C00879DCB /* AlamofireNetworkService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,11 +267,13 @@
 				6444F7DE2981256B00879DCB /* PokemonListView.swift in Sources */,
 				6444F7DC2981256B00879DCB /* PokemonAppApp.swift in Sources */,
 				6444F7F629814F0600879DCB /* DetailPokemonModel.swift in Sources */,
+				6444F8142981675C00879DCB /* AlamofireNetworkService.swift in Sources */,
 				6444F7F4298138A300879DCB /* DetailPokemonView.swift in Sources */,
 				6444F7F12981311A00879DCB /* PokemonListViewModel.swift in Sources */,
 				6444F8072981611E00879DCB /* CustomError.swift in Sources */,
 				6444F7F82981539A00879DCB /* DetailPokemonViewModel.swift in Sources */,
 				6444F80029815CBC00879DCB /* RequestStatuses.swift in Sources */,
+				6444F816298167B500879DCB /* NetworkDataService.swift in Sources */,
 				6444F80329815DBC00879DCB /* CodableError.swift in Sources */,
 				6444F7EF2981294600879DCB /* PokemonPreviewListModel.swift in Sources */,
 				6444F811298166A600879DCB /* AFError + extensions.swift in Sources */,

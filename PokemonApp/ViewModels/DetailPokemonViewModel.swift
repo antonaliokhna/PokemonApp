@@ -7,7 +7,11 @@
 
 import Foundation
 
-class DetailPokemonViewModel: ObservableObject {
+final class DetailPokemonViewModel: ObservableObject {
+
+    private var newtork = NetworkDataService()
+
+    @Published var status: RequestStatuses = .loading
 
     //TODO: We have pokemon name on list view model
     @Published var name: String = ""
@@ -21,19 +25,32 @@ class DetailPokemonViewModel: ObservableObject {
 
     init(url: URL) {
         self.url = url
-
-        self.loadPokemon()
     }
 }
 
-
 extension DetailPokemonViewModel {
-    func loadPokemon() {
-        name = "Pokemon1"
-        type = "gross"
-        weight = "15.4"
-        height = "127.2"
-        ability = "run-away, run-away"
-        isDefault = "Yes"
+    func loadPokemon() async {
+        do {
+            let model = try await newtork.searchCityWeather(
+                url: "https://pokeapi.co/api/v2/pokemon/10263/"
+            )
+
+            await MainActor.run { [weak self] in
+                guard let self = self else { return }
+                self.status = .sucsess
+
+                self.name = model.name
+                self.type = model.type
+                self.weight = model.weight.description
+                self.height = model.height.description
+            }
+
+        } catch {
+            guard let error = error as? CustomError else {
+                //Check handling error
+                return
+            }
+            status = .failed(error: error)
+        }
     }
 }

@@ -13,36 +13,47 @@ struct DetailPokemonView: View {
 
     var body: some View {
         ZStack {
-            Color.yellow.ignoresSafeArea()
 
-            VStack {
-                Text("Characterictics of \n\(Text(viewModel.name).bold())")
-                    .font(.largeTitle)
-                    .multilineTextAlignment(.center)
+            switch viewModel.status {
+            case .loading:
+                Text("Loading")
+            case .sucsess:
+                Color.yellow.ignoresSafeArea()
+                VStack {
+                    Text("Characterictics of \n\(Text(viewModel.name).bold())")
+                        .font(.largeTitle)
+                        .multilineTextAlignment(.center)
 
-                HStack() {
-                    VStack(alignment: .leading) {
-                        Text("Pokemon type: \(Text(viewModel.type).bold())")
-                        Text("Weight (kg): \(Text(viewModel.weight).bold())")
-                        Text("Height (cm): \(Text(viewModel.height).bold())")
-                        Text("Default: \(Text(viewModel.isDefault).bold())")
-                        Text("Ability's: \(Text(viewModel.ability).bold())")
+                    HStack() {
+                        VStack(alignment: .leading) {
+                            Text("Pokemon type: \(Text(viewModel.type).bold())")
+                            Text("Weight (kg): \(Text(viewModel.weight).bold())")
+                            Text("Height (cm): \(Text(viewModel.height).bold())")
+                            Text("Default: \(Text(viewModel.isDefault).bold())")
+                            Text("Ability's: \(Text(viewModel.ability).bold())")
+                        }
+                        .padding(.trailing)
+
+                        Spacer()
+
+                        Image(systemName: "xmark")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 96, height: 96)
                     }
-                    .padding(.trailing)
-
-                    Spacer()
-
-                    Image(systemName: "xmark")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 96, height: 96)
+                    .padding(.horizontal)
                 }
-                .padding(.horizontal)
+                .frame(maxWidth: .infinity)
+                .background(.green)
+                .cornerRadius(16)
+                .padding()
+            case .failed(let error):
+                Text("error")
+                Text(error.localizedDescription)
             }
-            .frame(maxWidth: .infinity)
-            .background(.green)
-            .cornerRadius(16)
-            .padding()
+        }
+        .task {
+            await viewModel.loadPokemon()
         }
     }
 }
