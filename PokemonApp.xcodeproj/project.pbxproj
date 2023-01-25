@@ -17,6 +17,7 @@
 		6444F7F629814F0600879DCB /* DetailPokemonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6444F7F529814F0600879DCB /* DetailPokemonModel.swift */; };
 		6444F7F82981539A00879DCB /* DetailPokemonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6444F7F72981539A00879DCB /* DetailPokemonViewModel.swift */; };
 		6444F7FC29815BDA00879DCB /* DataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6444F7FB29815BDA00879DCB /* DataFetcher.swift */; };
+		6444F80029815CBC00879DCB /* RequestStatuses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6444F7FF29815CBC00879DCB /* RequestStatuses.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		6444F7F529814F0600879DCB /* DetailPokemonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPokemonModel.swift; sourceTree = "<group>"; };
 		6444F7F72981539A00879DCB /* DetailPokemonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPokemonViewModel.swift; sourceTree = "<group>"; };
 		6444F7FB29815BDA00879DCB /* DataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcher.swift; sourceTree = "<group>"; };
+		6444F7FF29815CBC00879DCB /* RequestStatuses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestStatuses.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,8 @@
 		6444F7F929815B8100879DCB /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				6444F7FE29815C7F00879DCB /* Helpers */,
+				6444F7FD29815C7000879DCB /* Services */,
 				6444F7FA29815BB400879DCB /* DataCoders */,
 			);
 			path = Service;
@@ -131,6 +135,21 @@
 				6444F7FB29815BDA00879DCB /* DataFetcher.swift */,
 			);
 			path = DataCoders;
+			sourceTree = "<group>";
+		};
+		6444F7FD29815C7000879DCB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		6444F7FE29815C7F00879DCB /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				6444F7FF29815CBC00879DCB /* RequestStatuses.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,6 +228,7 @@
 				6444F7F4298138A300879DCB /* DetailPokemonView.swift in Sources */,
 				6444F7F12981311A00879DCB /* PokemonListViewModel.swift in Sources */,
 				6444F7F82981539A00879DCB /* DetailPokemonViewModel.swift in Sources */,
+				6444F80029815CBC00879DCB /* RequestStatuses.swift in Sources */,
 				6444F7EF2981294600879DCB /* PokemonPreviewListModel.swift in Sources */,
 				6444F7FC29815BDA00879DCB /* DataFetcher.swift in Sources */,
 			);
