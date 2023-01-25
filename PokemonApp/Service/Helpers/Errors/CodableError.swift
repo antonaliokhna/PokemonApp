@@ -7,12 +7,14 @@
 
 import Foundation
 
-enum CodableError: Error, LocalizedError{
+enum CodableError: Error {
     case decodingDataFailed
     case encodingDataFailed
     case dataIsEmpty
+}
 
-    var errorDescription: String! {
+extension CodableError: LocalizedError {
+    var errorDescription: String? {
         var description: String
         switch self {
         case .decodingDataFailed:

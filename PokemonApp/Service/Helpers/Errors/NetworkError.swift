@@ -7,13 +7,15 @@
 
 import Foundation
 
-enum NetworkError: Error, LocalizedError {
+enum NetworkError: Error {
     case requestFailed(statusCode: Int?)
     case internetConnectionFailed
     case requestTimeOut
     case invalidURL
+}
 
-    var errorDescription: String! {
+extension NetworkError: LocalizedError {
+    var errorDescription: String? {
         let description: String
         switch self {
         case .requestFailed(let statusCode):
