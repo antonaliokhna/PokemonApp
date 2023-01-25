@@ -17,7 +17,7 @@ struct PokemonListView: View {
                 List(viewModel.pokemonModels) { model in
                     NavigationLink {
                         //TODO: For test
-                        PokemonListView()
+                        DetailPokemonView()
                     } label: {
                         Text(model.name)
                     }
