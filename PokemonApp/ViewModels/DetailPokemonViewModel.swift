@@ -45,12 +45,10 @@ extension DetailPokemonViewModel {
                 self.height = model.height.description
             }
 
-        } catch {
-            guard let error = error as? CustomError else {
-                //Check handling error
-                return
-            }
+        } catch let error as CustomError {
             status = .failed(error: error)
+        } catch {
+            status = .failed(error: .localError(error: .unknownError))
         }
     }
 }

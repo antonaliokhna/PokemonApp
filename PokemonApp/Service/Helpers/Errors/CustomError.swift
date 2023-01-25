@@ -9,6 +9,7 @@ import Foundation
 
 enum CustomError: Error {
     case networkError(error: NetworkError)
+    case localError(error: LocalError)
     case codableError(error: CodableError)
 }
 
@@ -19,6 +20,8 @@ extension CustomError: LocalizedError {
         case .networkError(let error):
             description = error.errorDescription
         case .codableError(let error):
+            description = error.errorDescription
+        case .localError(let error):
             description = error.errorDescription
         }
 

@@ -29,6 +29,7 @@
 		6444F81B2981948F00879DCB /* DataFetcherServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6444F81A2981948F00879DCB /* DataFetcherServiceType.swift */; };
 		6444F81F2981955D00879DCB /* ServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6444F81E2981955D00879DCB /* ServiceType.swift */; };
 		6444F8212981966D00879DCB /* ParametersType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6444F8202981966D00879DCB /* ParametersType.swift */; };
+		6444F82329819A1C00879DCB /* LocalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6444F82229819A1C00879DCB /* LocalError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		6444F81A2981948F00879DCB /* DataFetcherServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcherServiceType.swift; sourceTree = "<group>"; };
 		6444F81E2981955D00879DCB /* ServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceType.swift; sourceTree = "<group>"; };
 		6444F8202981966D00879DCB /* ParametersType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParametersType.swift; sourceTree = "<group>"; };
+		6444F82229819A1C00879DCB /* LocalError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 				6444F8062981611E00879DCB /* CustomError.swift */,
 				6444F80429815ED000879DCB /* NetworkError.swift */,
 				6444F80229815DBC00879DCB /* CodableError.swift */,
+				6444F82229819A1C00879DCB /* LocalError.swift */,
 			);
 			path = Errors;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				6444F7F12981311A00879DCB /* PokemonListViewModel.swift in Sources */,
 				6444F8212981966D00879DCB /* ParametersType.swift in Sources */,
 				6444F8072981611E00879DCB /* CustomError.swift in Sources */,
+				6444F82329819A1C00879DCB /* LocalError.swift in Sources */,
 				6444F7F82981539A00879DCB /* DetailPokemonViewModel.swift in Sources */,
 				6444F81B2981948F00879DCB /* DataFetcherServiceType.swift in Sources */,
 				6444F80029815CBC00879DCB /* RequestStatuses.swift in Sources */,

@@ -13,10 +13,11 @@ struct DetailPokemonView: View {
 
     var body: some View {
         ZStack {
-
             switch viewModel.status {
+
             case .loading:
                 Text("Loading")
+
             case .sucsess:
                 Color.yellow.ignoresSafeArea()
                 VStack {
@@ -41,12 +42,13 @@ struct DetailPokemonView: View {
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 96, height: 96)
                     }
-                    .padding(.horizontal)
+                    .padding()
                 }
                 .frame(maxWidth: .infinity)
                 .background(.green)
                 .cornerRadius(16)
                 .padding()
+
             case .failed(let error):
                 Text("error")
                 Text(error.localizedDescription)
