@@ -16,6 +16,7 @@ struct DetailPokemonModel: Codable {
     let name: String
     let height: Double
     let weight: Double
+    let isDefault: Bool
 
     var type: String {
         types.map { $0.type.name }.joined(separator: ", ")
@@ -23,6 +24,10 @@ struct DetailPokemonModel: Codable {
 
     var image: URL {
         sprites.frontDefault
+    }
+
+    var abilitiesString: String {
+        abilities.map { $0.ability.name }.joined(separator: ", ")
     }
 }
 

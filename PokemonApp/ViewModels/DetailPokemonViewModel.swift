@@ -41,7 +41,9 @@ extension DetailPokemonViewModel {
             self.type = model.type
             self.weight = model.weight.description
             self.height = model.height.description
+            self.ability = model.abilitiesString
             self.imageUrl = model.image
+            self.isDefault = model.isDefault ? "Yes" : "No"
 
             self.status = .sucsess
 
