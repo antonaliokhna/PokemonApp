@@ -17,7 +17,7 @@ class DataFetcher: DataFetcherType {
 
     func fetchGenericData<T: Decodable>(
         url: String,
-        parameters: [String: Any]
+        parameters: Parameters
     ) async throws -> T {
 
         let data = try await service.fetch(

@@ -9,8 +9,6 @@ import Foundation
 
 class NetworkDataService {
 
-    typealias Parameters = [String: Any]
-
     var dataFetcher: DataFetcherType
 
     init(
