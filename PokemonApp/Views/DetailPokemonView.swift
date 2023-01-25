@@ -37,10 +37,17 @@ struct DetailPokemonView: View {
 
                         Spacer()
 
-                        Image(systemName: "xmark")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 96, height: 96)
+                        AsyncImage(url: viewModel.imageUrl) { image in
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 128, height: 128)
+
+                        } placeholder: {
+                            ProgressView()
+                                .progressViewStyle(CircularProgressViewStyle(tint: .yellow))
+                                .scaleEffect(3)
+                        }
                     }
                     .padding()
                 }

@@ -20,6 +20,8 @@ final class DetailPokemonViewModel: ObservableObject {
     @Published var ability: String = ""
     @Published var isDefault: String = ""
 
+    var imageUrl: URL?
+
     private let url: String
 
     init(name: String, url: String) {
@@ -36,10 +38,12 @@ extension DetailPokemonViewModel {
         do {
             let model = try await newtork.fetchDetailPokemonBy(url: url)
 
-            self.status = .sucsess
             self.type = model.type
             self.weight = model.weight.description
             self.height = model.height.description
+            self.imageUrl = model.image
+
+            self.status = .sucsess
 
         } catch {
             guard let error = error as? CustomError else {
