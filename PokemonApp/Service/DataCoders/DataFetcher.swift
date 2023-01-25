@@ -7,7 +7,7 @@
 
 import Foundation
 
-class DataFetcher {
+class DataFetcher: DataFetcherType {
 
     private let service: AlamofireNetworkService
 
