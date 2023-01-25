@@ -11,7 +11,7 @@ class NetworkDataService {
 
     typealias Parameters = [String: Any]
 
-    var dataFetcher: DataFetcher
+    var dataFetcher: DataFetcherType
 
     init(
         dataFetcher: DataFetcher = DataFetcher(

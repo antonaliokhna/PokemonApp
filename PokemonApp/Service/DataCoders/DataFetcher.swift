@@ -9,9 +9,9 @@ import Foundation
 
 class DataFetcher: DataFetcherType {
 
-    private let service: AlamofireNetworkService
+    private let service: DataFetcherServiceType
 
-    init(service: AlamofireNetworkService) {
+    init(service: DataFetcherServiceType) {
         self.service = service
     }
 
