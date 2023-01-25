@@ -13,6 +13,7 @@ enum CustomError: Error {
     case codableError(error: CodableError)
 }
 
+//MARK: LocalizedError protocol
 extension CustomError: LocalizedError {
     var errorDescription: String? {
         let description: String?
@@ -26,5 +27,22 @@ extension CustomError: LocalizedError {
         }
 
         return description
+    }
+}
+
+//MARK: Getting error image
+extension CustomError {
+    var errorImagePath: String {
+        let imagePath: String
+        switch self {
+        case .networkError:
+            imagePath = "wifi.slash"
+        case .codableError:
+            imagePath = "network"
+        case .localError:
+            imagePath = "exclamationmark.triangle"
+        }
+
+        return imagePath
     }
 }
