@@ -16,7 +16,7 @@ final class PokemonListViewModel: ObservableObject {
     @Published var pokemonModel: PokemonListModel = PokemonListModel()
 
     var previousButtonDisable: Bool {
-        return self.currentPage < 1
+        return self.currentPage <= 0
     }
 
     var nextButtonDisable: Bool {
