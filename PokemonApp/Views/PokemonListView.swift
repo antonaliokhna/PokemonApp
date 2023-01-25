@@ -32,13 +32,13 @@ struct PokemonListView: View {
 
                 HStack {
                     Button {
-                        //back
+                        viewModel.previousPage()
                     } label: {
                         Image(systemName: "arrowshape.turn.up.left.circle")
                     }
 
                     Button {
-                        //next
+                        viewModel.nextPage()
                     } label: {
                         Image(systemName: "arrowshape.turn.up.right.circle")
                     }
