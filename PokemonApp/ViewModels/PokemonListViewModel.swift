@@ -20,7 +20,11 @@ final class PokemonListViewModel: ObservableObject {
     }
 
     var nextButtonDisable: Bool {
-        return pokemonModel.count < self.currentPage * 50 + 50
+        let value = self.currentPage *
+            ApiDefaultSettings.step +
+            ApiDefaultSettings.step
+
+        return pokemonModel.count < value
     }
 
     init() {

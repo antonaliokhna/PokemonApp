@@ -30,8 +30,8 @@ class NetworkDataService {
         let url = "https://pokeapi.co/api/v2/pokemon"
 
         let parameters: Parameters = [
-            "offset": page * 50,
-            "limit": 50,
+            "offset": page * ApiDefaultSettings.step,
+            "limit": ApiDefaultSettings.step,
         ]
 
         return try await dataFetcher.fetchGenericData(
