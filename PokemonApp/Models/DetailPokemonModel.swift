@@ -22,17 +22,17 @@ struct DetailPokemonModel: Codable {
 
 extension DetailPokemonModel {
     //MARK: Pokemon types struct
-    struct Types {
+    struct Types: Codable {
         let type: Name
     }
 
     //MARK: Pokemon ability struct
-    struct Ability {
+    struct Ability: Codable {
         let ability: Name
     }
 
     //MARK: Name struct
-    struct Name {
+    struct Name: Codable {
         let name: String
     }
 }
