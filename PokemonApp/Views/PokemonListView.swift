@@ -18,6 +18,7 @@ struct PokemonListView: View {
                     NavigationLink {
                         DetailPokemonView(
                             viewModel: DetailPokemonViewModel(
+                                service: viewModel.networkService,
                                 name: model.name,
                                 url: model.url
                             )

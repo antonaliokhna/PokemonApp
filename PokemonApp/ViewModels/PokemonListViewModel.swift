@@ -9,11 +9,11 @@ import Foundation
 
 final class PokemonListViewModel: ObservableObject {
 
-    private var newtork = NetworkDataService()
     private var currentPage: Int = 0
+    var networkService: NetworkDataService = NetworkDataService()
 
-    @Published var status: RequestStatuses = .loading
     @Published var pokemonModel: PokemonListModel = PokemonListModel()
+    @Published var status: RequestStatuses = .loading
 
     var previousButtonDisable: Bool {
         return self.currentPage <= 0
@@ -26,11 +26,6 @@ final class PokemonListViewModel: ObservableObject {
 
         return pokemonModel.count < value
     }
-
-    init() {
-        //empty init...
-    }
-    
 }
 
 extension PokemonListViewModel {
@@ -39,7 +34,9 @@ extension PokemonListViewModel {
         status = .loading
         do {
             let model =
-                try await newtork.fetchPreviewPokemonListBy(page: currentPage)
+                try await networkService.fetchPreviewPokemonListBy(
+                    page: currentPage
+                )
 
             self.pokemonModel = model
             self.status = .sucsess
