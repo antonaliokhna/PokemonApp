@@ -20,6 +20,7 @@
 		6444F80029815CBC00879DCB /* RequestStatuses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6444F7FF29815CBC00879DCB /* RequestStatuses.swift */; };
 		6444F80329815DBC00879DCB /* CodableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6444F80229815DBC00879DCB /* CodableError.swift */; };
 		6444F80529815ED000879DCB /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6444F80429815ED000879DCB /* NetworkError.swift */; };
+		6444F8072981611E00879DCB /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6444F8062981611E00879DCB /* CustomError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		6444F7FF29815CBC00879DCB /* RequestStatuses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestStatuses.swift; sourceTree = "<group>"; };
 		6444F80229815DBC00879DCB /* CodableError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableError.swift; sourceTree = "<group>"; };
 		6444F80429815ED000879DCB /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		6444F8062981611E00879DCB /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 			children = (
 				6444F80229815DBC00879DCB /* CodableError.swift */,
 				6444F80429815ED000879DCB /* NetworkError.swift */,
+				6444F8062981611E00879DCB /* CustomError.swift */,
 			);
 			path = Errors;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				6444F7F629814F0600879DCB /* DetailPokemonModel.swift in Sources */,
 				6444F7F4298138A300879DCB /* DetailPokemonView.swift in Sources */,
 				6444F7F12981311A00879DCB /* PokemonListViewModel.swift in Sources */,
+				6444F8072981611E00879DCB /* CustomError.swift in Sources */,
 				6444F7F82981539A00879DCB /* DetailPokemonViewModel.swift in Sources */,
 				6444F80029815CBC00879DCB /* RequestStatuses.swift in Sources */,
 				6444F80329815DBC00879DCB /* CodableError.swift in Sources */,
