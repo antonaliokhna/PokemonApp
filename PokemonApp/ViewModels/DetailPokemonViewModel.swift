@@ -29,26 +29,27 @@ final class DetailPokemonViewModel: ObservableObject {
 }
 
 extension DetailPokemonViewModel {
+    @MainActor
     func loadPokemon() async {
         do {
             let model = try await newtork.searchCityWeather(
                 url: "https://pokeapi.co/api/v2/pokemon/10263/"
             )
 
-            await MainActor.run { [weak self] in
-                guard let self = self else { return }
-                self.status = .sucsess
+            self.status = .sucsess
+            self.name = model.name
+            self.type = model.type
+            self.weight = model.weight.description
+            self.height = model.height.description
 
-                self.name = model.name
-                self.type = model.type
-                self.weight = model.weight.description
-                self.height = model.height.description
+        } catch {
+            guard let error = error as? CustomError else {
+                status = .failed(error: .localError(error: .unknownError))
+
+                return
             }
 
-        } catch let error as CustomError {
-            status = .failed(error: error)
-        } catch {
-            status = .failed(error: .localError(error: .unknownError))
+            self.status = .failed(error: error)
         }
     }
 }
