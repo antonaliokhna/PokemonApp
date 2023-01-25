@@ -58,7 +58,7 @@ extension DetailPokemonViewModel {
     func reloadPokemonData() {
         status = .loading
         Task {
-            await loadPokemon()
+            await loadPokemonData()
         }
     }
 }
