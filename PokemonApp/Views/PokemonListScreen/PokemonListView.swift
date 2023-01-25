@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  PokemonListView.swift
 //  PokemonApp
 //
 //  Created by Anton Aliokhna on 1/25/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct PokemonListView: View {
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -19,8 +19,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct PokemonListView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        PokemonListView()
     }
 }
