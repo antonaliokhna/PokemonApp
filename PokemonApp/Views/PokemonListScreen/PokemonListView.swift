@@ -9,30 +9,12 @@ import SwiftUI
 
 struct PokemonListView: View {
 
-    //MARK: For test...
-    let models: [PokemonPreviewListModel] = [
-        .init(name: "first", url: URL(string: "https://pokeapi.co/api/v2/pokemon/10263/")!),
-        .init(name: "second", url: URL(string: "https://pokeapi.co/api/v2/pokemon/10263/")!),
-        .init(name: "test", url: URL(string: "https://pokeapi.co/api/v2/pokemon/10263/")!),
-        .init(name: "test", url: URL(string: "https://pokeapi.co/api/v2/pokemon/10263/")!),
-        .init(name: "test", url: URL(string: "https://pokeapi.co/api/v2/pokemon/10263/")!),
-        .init(name: "test", url: URL(string: "https://pokeapi.co/api/v2/pokemon/10263/")!),
-        .init(name: "test", url: URL(string: "https://pokeapi.co/api/v2/pokemon/10263/")!),
-        .init(name: "last", url: URL(string: "https://pokeapi.co/api/v2/pokemon/10263/")!),
-        .init(name: "first", url: URL(string: "https://pokeapi.co/api/v2/pokemon/10263/")!),
-        .init(name: "second", url: URL(string: "https://pokeapi.co/api/v2/pokemon/10263/")!),
-        .init(name: "test", url: URL(string: "https://pokeapi.co/api/v2/pokemon/10263/")!),
-        .init(name: "test", url: URL(string: "https://pokeapi.co/api/v2/pokemon/10263/")!),
-        .init(name: "test", url: URL(string: "https://pokeapi.co/api/v2/pokemon/10263/")!),
-        .init(name: "test", url: URL(string: "https://pokeapi.co/api/v2/pokemon/10263/")!),
-        .init(name: "test", url: URL(string: "https://pokeapi.co/api/v2/pokemon/10263/")!),
-        .init(name: "last", url: URL(string: "https://pokeapi.co/api/v2/pokemon/10263/")!),
-    ]
+    @StateObject private var viewModel = PokemonListViewModel()
 
     var body: some View {
         NavigationView {
             VStack {
-                List(models) { model in
+                List(viewModel.pokemonModels) { model in
                     NavigationLink {
                         //TODO: For test
                         PokemonListView()
@@ -61,6 +43,9 @@ struct PokemonListView: View {
 
             }
             .navigationTitle("Pokemons")
+        }
+        .onAppear {
+            viewModel.loadPokemons()
         }
     }
 }
