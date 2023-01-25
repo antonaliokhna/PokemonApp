@@ -55,7 +55,7 @@ extension PokemonListViewModel {
     }
 
     func nextPage() {
-        self.currentPage += 1
+        currentPage.increment()
 
         Task {
             await loadPokemonsData()
@@ -63,7 +63,7 @@ extension PokemonListViewModel {
     }
 
     func previousPage() {
-        self.currentPage -= 1
+        currentPage.decrement()
 
         Task {
             await loadPokemonsData()
