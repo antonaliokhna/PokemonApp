@@ -12,6 +12,7 @@
 		6444F7E02981256D00879DCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6444F7DF2981256D00879DCB /* Assets.xcassets */; };
 		6444F7E32981256D00879DCB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6444F7E22981256D00879DCB /* Preview Assets.xcassets */; };
 		6444F7EF2981294600879DCB /* PokemonPreviewListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6444F7EE2981294600879DCB /* PokemonPreviewListModel.swift */; };
+		6444F7F12981311A00879DCB /* PokemonListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6444F7F02981311A00879DCB /* PokemonListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		6444F7DF2981256D00879DCB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6444F7E22981256D00879DCB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6444F7EE2981294600879DCB /* PokemonPreviewListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonPreviewListModel.swift; sourceTree = "<group>"; };
+		6444F7F02981311A00879DCB /* PokemonListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 		6444F7EA298127B600879DCB /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				6444F7F02981311A00879DCB /* PokemonListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 			files = (
 				6444F7DE2981256B00879DCB /* PokemonListView.swift in Sources */,
 				6444F7DC2981256B00879DCB /* PokemonAppApp.swift in Sources */,
+				6444F7F12981311A00879DCB /* PokemonListViewModel.swift in Sources */,
 				6444F7EF2981294600879DCB /* PokemonPreviewListModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
