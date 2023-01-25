@@ -6,3 +6,27 @@
 //
 
 import Foundation
+
+class NetworkDataService {
+
+    typealias Parameters = [String: Any]
+
+    var dataFetcher: DataFetcher
+
+    init(
+        dataFetcher: DataFetcher = DataFetcher(
+            service: AlamofireNetworkService()
+        )
+    ) {
+        self.dataFetcher = dataFetcher
+    }
+
+    func searchCityWeather(url: String) async throws -> DetailPokemonModel {
+        let stringUrl = url
+
+        return try await self.dataFetcher.fetchGenericData(
+            url: stringUrl,
+            parameters: [:]
+        )
+    }
+}
