@@ -49,6 +49,10 @@ struct DetailPokemonView: View {
 
 struct DetailPokemonView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailPokemonView(viewModel: DetailPokemonViewModel())
+        DetailPokemonView(
+            viewModel: DetailPokemonViewModel(
+                url: URL(string: "https://pokeapi.co/api/v2/pokemon/10263/")!
+            )
+        )
     }
 }

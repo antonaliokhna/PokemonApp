@@ -9,17 +9,31 @@ import Foundation
 
 class DetailPokemonViewModel: ObservableObject {
 
-    @Published var name: String = "Pokemon1"
-    @Published var type: String = "gross"
-    @Published var weight: String = "15.4"
-    @Published var height: String = "127.2"
-    @Published var ability: String = "run-away, run-away"
-    @Published var isDefault: String = "Yes"
+    //TODO: We have pokemon name on list view model
+    @Published var name: String = ""
+    @Published var type: String = ""
+    @Published var weight: String = ""
+    @Published var height: String = ""
+    @Published var ability: String = ""
+    @Published var isDefault: String = ""
 
-    init() {
-        //empty init...
+    private let url: URL
+
+    init(url: URL) {
+        self.url = url
+
+        self.loadPokemon()
     }
-
 }
 
 
+extension DetailPokemonViewModel {
+    func loadPokemon() {
+        name = "Pokemon1"
+        type = "gross"
+        weight = "15.4"
+        height = "127.2"
+        ability = "run-away, run-away"
+        isDefault = "Yes"
+    }
+}
