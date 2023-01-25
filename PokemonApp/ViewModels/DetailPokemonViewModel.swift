@@ -28,9 +28,11 @@ final class DetailPokemonViewModel: ObservableObject {
     }
 }
 
+
+//
 extension DetailPokemonViewModel {
     @MainActor
-    func loadPokemon() async {
+    func loadPokemonData() async {
         do {
             let model = try await newtork.searchCityWeather(
                 url: "https://pokeapi.co/api/v2/pokemon/10263/"
@@ -50,6 +52,13 @@ extension DetailPokemonViewModel {
             }
 
             self.status = .failed(error: error)
+        }
+    }
+
+    func reloadPokemonData() {
+        status = .loading
+        Task {
+            await loadPokemon()
         }
     }
 }

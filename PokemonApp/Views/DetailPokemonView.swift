@@ -50,12 +50,30 @@ struct DetailPokemonView: View {
                 .padding()
 
             case .failed(let error):
-                Text("error")
-                Text(error.localizedDescription)
+                VStack(spacing: 32) {
+                    Image(systemName: error.errorImagePath)
+                        .font(.system(size: 80))
+                    Text(error.localizedDescription)
+                        .font(.title2)
+                        .multilineTextAlignment(.center)
+
+                    Button() {
+                        viewModel.reloadPokemonData()
+                    } label: {
+                        Label {
+                            Text("Reload")
+                        } icon: {
+                            Image(systemName: "restart.circle")
+                        }
+                    }
+                    .font(.title2)
+                    .buttonStyle(.bordered)
+                }
+                .padding()
             }
         }
         .task {
-            await viewModel.loadPokemon()
+            await viewModel.loadPokemonData()
         }
     }
 }
