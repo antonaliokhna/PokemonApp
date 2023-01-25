@@ -82,8 +82,8 @@
 		6444F7E9298127AF00879DCB /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				6444F7F22981365A00879DCB /* DetailPokemonScreen */,
-				6444F7ED298127FC00879DCB /* PokemonListScreen */,
+				6444F7F3298138A300879DCB /* DetailPokemonView.swift */,
+				6444F7DD2981256B00879DCB /* PokemonListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -112,22 +112,6 @@
 				6444F7DB2981256B00879DCB /* PokemonAppApp.swift */,
 			);
 			path = Application;
-			sourceTree = "<group>";
-		};
-		6444F7ED298127FC00879DCB /* PokemonListScreen */ = {
-			isa = PBXGroup;
-			children = (
-				6444F7DD2981256B00879DCB /* PokemonListView.swift */,
-			);
-			path = PokemonListScreen;
-			sourceTree = "<group>";
-		};
-		6444F7F22981365A00879DCB /* DetailPokemonScreen */ = {
-			isa = PBXGroup;
-			children = (
-				6444F7F3298138A300879DCB /* DetailPokemonView.swift */,
-			);
-			path = DetailPokemonScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
