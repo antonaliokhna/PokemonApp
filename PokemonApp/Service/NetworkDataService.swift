@@ -19,7 +19,7 @@ class NetworkDataService {
         self.dataFetcher = dataFetcher
     }
 
-    func searchCityWeather(url: String) async throws -> DetailPokemonModel {
+    func fetchDetailPokemonBy(url: String) async throws -> DetailPokemonModel {
         let stringUrl = url
 
         return try await self.dataFetcher.fetchGenericData(

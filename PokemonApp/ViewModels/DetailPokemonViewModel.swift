@@ -34,7 +34,7 @@ extension DetailPokemonViewModel {
     @MainActor
     func loadPokemonData() async {
         do {
-            let model = try await newtork.searchCityWeather(
+            let model = try await newtork.fetchDetailPokemonBy(
                 url: "https://pokeapi.co/api/v2/pokemon/10263/"
             )
 
