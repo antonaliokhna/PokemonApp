@@ -15,6 +15,7 @@
 		6444F7F12981311A00879DCB /* PokemonListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6444F7F02981311A00879DCB /* PokemonListViewModel.swift */; };
 		6444F7F4298138A300879DCB /* DetailPokemonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6444F7F3298138A300879DCB /* DetailPokemonView.swift */; };
 		6444F7F629814F0600879DCB /* DetailPokemonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6444F7F529814F0600879DCB /* DetailPokemonModel.swift */; };
+		6444F7F82981539A00879DCB /* DetailPokemonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6444F7F72981539A00879DCB /* DetailPokemonViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		6444F7F02981311A00879DCB /* PokemonListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListViewModel.swift; sourceTree = "<group>"; };
 		6444F7F3298138A300879DCB /* DetailPokemonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPokemonView.swift; sourceTree = "<group>"; };
 		6444F7F529814F0600879DCB /* DetailPokemonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPokemonModel.swift; sourceTree = "<group>"; };
+		6444F7F72981539A00879DCB /* DetailPokemonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPokemonViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				6444F7F02981311A00879DCB /* PokemonListViewModel.swift */,
+				6444F7F72981539A00879DCB /* DetailPokemonViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 				6444F7F629814F0600879DCB /* DetailPokemonModel.swift in Sources */,
 				6444F7F4298138A300879DCB /* DetailPokemonView.swift in Sources */,
 				6444F7F12981311A00879DCB /* PokemonListViewModel.swift in Sources */,
+				6444F7F82981539A00879DCB /* DetailPokemonViewModel.swift in Sources */,
 				6444F7EF2981294600879DCB /* PokemonPreviewListModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
