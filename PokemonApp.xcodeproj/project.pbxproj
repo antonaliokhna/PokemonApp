@@ -129,8 +129,7 @@
 		6444F7E9298127AF00879DCB /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				6444F7F3298138A300879DCB /* DetailPokemonView.swift */,
-				6444F7DD2981256B00879DCB /* PokemonListView.swift */,
+				6444F8352982C60F00879DCB /* Screen */,
 				6444F82F29829C0600879DCB /* ErrorView.swift */,
 				6444F8312982A24000879DCB /* LoadingAnimationView.swift */,
 				6444F8332982C3A700879DCB /* CustomDetailBlockViewModifier.swift */,
@@ -241,6 +240,15 @@
 				6444F82D2982759E00879DCB /* BackroundGradientView.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		6444F8352982C60F00879DCB /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				6444F7F3298138A300879DCB /* DetailPokemonView.swift */,
+				6444F7DD2981256B00879DCB /* PokemonListView.swift */,
+			);
+			path = Screen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
