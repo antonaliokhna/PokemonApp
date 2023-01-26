@@ -16,11 +16,11 @@ final class PokemonListViewModel: ObservableObject {
     @Published var status: RequestStatuses = .loading
 
     var previousButtonDisable: Bool {
-        return self.currentPage <= 0
+        return currentPage <= 0
     }
 
     var nextButtonDisable: Bool {
-        let value = self.currentPage *
+        let value = currentPage *
             ApiDefaultSettings.step +
             ApiDefaultSettings.step
 
