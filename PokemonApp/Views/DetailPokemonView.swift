@@ -18,11 +18,14 @@ struct DetailPokemonView: View {
 
             switch viewModel.status {
             case .sucsess:
-                VStack {
+                VStack(spacing: 24) {
                     headerBlock
                     aboutBlock
                     imageBlock
+
+                    Spacer()
                 }
+                .padding()
 
             case .loading:
                 LoadingAnimationView()
@@ -51,12 +54,11 @@ struct DetailPokemonView: View {
     }
 
     private var aboutBlock: some View {
-        VStack {
+        VStack(spacing: 16) {
             Text("Sooo... About me 😀")
                 .font(.title)
                 .fontWeight(.thin)
                 .multilineTextAlignment(.center)
-                .padding(.top)
 
             VStack(alignment: .center, spacing: 12) {
                 Text("Type: \(Text(viewModel.type).bold())")
@@ -68,13 +70,9 @@ struct DetailPokemonView: View {
             .font(.body)
             .fontWeight(.light)
             .multilineTextAlignment(.center)
-            .padding()
         }
         .frame(maxWidth: .infinity)
-        .background(.bar)
-        .cornerRadius(16)
-        .padding()
-        .shadow(radius: 20)
+        .modifier(CustomDetailBlockViewModifier())
     }
 
     private var imageBlock: some View {
@@ -98,10 +96,7 @@ struct DetailPokemonView: View {
                 .italic()
         }
         .padding(.horizontal)
-        .padding()
-        .background(.bar)
-        .cornerRadius(16)
-        .shadow(radius: 20)
+        .modifier(CustomDetailBlockViewModifier())
     }
 }
 

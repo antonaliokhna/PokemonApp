@@ -37,6 +37,7 @@
 		6444F82E2982759E00879DCB /* BackroundGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6444F82D2982759E00879DCB /* BackroundGradientView.swift */; };
 		6444F83029829C0600879DCB /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6444F82F29829C0600879DCB /* ErrorView.swift */; };
 		6444F8322982A24000879DCB /* LoadingAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6444F8312982A24000879DCB /* LoadingAnimationView.swift */; };
+		6444F8342982C3A700879DCB /* CustomDetailBlockViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6444F8332982C3A700879DCB /* CustomDetailBlockViewModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		6444F82D2982759E00879DCB /* BackroundGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackroundGradientView.swift; sourceTree = "<group>"; };
 		6444F82F29829C0600879DCB /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		6444F8312982A24000879DCB /* LoadingAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAnimationView.swift; sourceTree = "<group>"; };
+		6444F8332982C3A700879DCB /* CustomDetailBlockViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDetailBlockViewModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 				6444F7DD2981256B00879DCB /* PokemonListView.swift */,
 				6444F82F29829C0600879DCB /* ErrorView.swift */,
 				6444F8312982A24000879DCB /* LoadingAnimationView.swift */,
+				6444F8332982C3A700879DCB /* CustomDetailBlockViewModifier.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 				6444F82329819A1C00879DCB /* LocalError.swift in Sources */,
 				6444F83029829C0600879DCB /* ErrorView.swift in Sources */,
 				6444F8272981CE4700879DCB /* Int + extensions.swift in Sources */,
+				6444F8342982C3A700879DCB /* CustomDetailBlockViewModifier.swift in Sources */,
 				6444F7F82981539A00879DCB /* DetailPokemonViewModel.swift in Sources */,
 				6444F81B2981948F00879DCB /* DataFetcherServiceType.swift in Sources */,
 				6444F80029815CBC00879DCB /* RequestStatuses.swift in Sources */,
