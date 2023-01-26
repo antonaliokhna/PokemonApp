@@ -83,6 +83,7 @@ struct PokemonListView: View {
             .listRowBackground(Color.cyan.opacity(0.2))
         }
         .scrollContentBackground(.hidden)
+        .shadow(color: .cyan.opacity(0.5), radius: 5)
     }
 }
 

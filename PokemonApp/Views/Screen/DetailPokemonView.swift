@@ -48,6 +48,7 @@ struct DetailPokemonView: View {
                 .font(.system(size: 42))
                 .fontWeight(.regular)
                 .multilineTextAlignment(.center)
+                .shadow(color: .cyan.opacity(0.5), radius: 5)
         }
     }
 
