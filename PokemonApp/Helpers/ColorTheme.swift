@@ -10,11 +10,11 @@ import SwiftUI
 
 struct ColorTheme {
     static let dark = [
-        Color(red: 0/255, green: 130/255, blue: 156/255),
-        Color(red: 140/255, green: 0/255, blue: 156/255),
+        Color(red: 0/255, green: 130/255, blue: 160/255, opacity: 0.5),
+        Color(red: 140/255, green: 0/255, blue: 160/255, opacity: 0.5),
     ]
-    static let white = [
-        Color(red: 30/255, green: 98/255, blue: 241/255),
-        Color(red: 53/255, green: 204/255, blue: 240/255),
+    static let light = [
+        Color(red: 0/255, green: 230/255, blue: 255/255, opacity: 0.6),
+        Color(red: 255/255, green: 130/255, blue: 200/255, opacity: 0.6),
     ]
 }

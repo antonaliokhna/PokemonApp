@@ -10,9 +10,10 @@ import SwiftUI
 struct BackroundGradientView: View {
     @Environment(\.colorScheme) private var colorScheme: ColorScheme
     var body: some View {
-        let cutomColorScheme = colorScheme == .dark
-        ? ColorTheme.dark
-        : ColorTheme.white
+        let cutomColorScheme =
+            colorScheme == .dark
+            ? ColorTheme.dark
+            : ColorTheme.light
 
         let gradient = Gradient(colors: cutomColorScheme)
         let linearGradient = LinearGradient(

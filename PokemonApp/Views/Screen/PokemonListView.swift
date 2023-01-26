@@ -15,7 +15,6 @@ struct PokemonListView: View {
         NavigationStack {
             ZStack {
                 BackroundGradientView()
-                    .opacity(0.5)
 
                 VStack {
                     switch viewModel.status {
@@ -28,8 +27,7 @@ struct PokemonListView: View {
                     }
                 }
             }
-            .navigationTitle("Pokemons")
-            .preferredColorScheme(.dark)
+            .navigationTitle("Pokemon's")
             .animation(.default, value: viewModel.status)
             .toolbar {
                 ToolbarItemGroup(placement: .status) {
@@ -47,24 +45,37 @@ struct PokemonListView: View {
             Button {
                 viewModel.switchPage(side: .left)
             } label: {
-                Image(systemName: "arrowshape.turn.up.left.circle")
+                Image(systemName: "chevron.left.circle")
                     .foregroundColor(
                         viewModel.previousButtonDisable
                         ? .gray
                         : .cyan.opacity(0.8)
                     )
-
+                    .shadow(
+                        color:
+                            viewModel.previousButtonDisable
+                                ? .gray.opacity(0.8)
+                                : .cyan.opacity(0.8),
+                        radius: 5
+                    )
             }
             .disabled(viewModel.previousButtonDisable)
 
             Button {
                 viewModel.switchPage(side: .right)
             } label: {
-                Image(systemName: "arrowshape.turn.up.right.circle")
+                Image(systemName: "chevron.right.circle")
                     .foregroundColor(
                         viewModel.nextButtonDisable
                         ? .gray
                         : .cyan.opacity(0.8)
+                    )
+                    .shadow(
+                        color:
+                            viewModel.nextButtonDisable
+                                ? .gray.opacity(0.8)
+                                : .cyan.opacity(0.8),
+                        radius: 5
                     )
             }
             .disabled(viewModel.nextButtonDisable)

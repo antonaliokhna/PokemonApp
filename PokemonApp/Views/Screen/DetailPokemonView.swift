@@ -14,7 +14,6 @@ struct DetailPokemonView: View {
     var body: some View {
         ZStack {
             BackroundGradientView()
-                .opacity(0.5)
 
             switch viewModel.status {
             case .sucsess:
