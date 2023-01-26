@@ -34,6 +34,7 @@
 		6444F8272981CE4700879DCB /* Int + extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6444F8262981CE4700879DCB /* Int + extensions.swift */; };
 		6444F82A2981CF9400879DCB /* DirectionSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6444F8292981CF9400879DCB /* DirectionSide.swift */; };
 		6444F82C29826F4E00879DCB /* ColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6444F82B29826F4E00879DCB /* ColorTheme.swift */; };
+		6444F82E2982759E00879DCB /* BackroundGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6444F82D2982759E00879DCB /* BackroundGradientView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		6444F8262981CE4700879DCB /* Int + extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int + extensions.swift"; sourceTree = "<group>"; };
 		6444F8292981CF9400879DCB /* DirectionSide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionSide.swift; sourceTree = "<group>"; };
 		6444F82B29826F4E00879DCB /* ColorTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTheme.swift; sourceTree = "<group>"; };
+		6444F82D2982759E00879DCB /* BackroundGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackroundGradientView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +229,7 @@
 				6444F8292981CF9400879DCB /* DirectionSide.swift */,
 				6444F7FF29815CBC00879DCB /* RequestStatuses.swift */,
 				6444F82B29826F4E00879DCB /* ColorTheme.swift */,
+				6444F82D2982759E00879DCB /* BackroundGradientView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				6444F7F12981311A00879DCB /* PokemonListViewModel.swift in Sources */,
 				6444F8212981966D00879DCB /* ParametersType.swift in Sources */,
 				6444F8072981611E00879DCB /* CustomError.swift in Sources */,
+				6444F82E2982759E00879DCB /* BackroundGradientView.swift in Sources */,
 				6444F82329819A1C00879DCB /* LocalError.swift in Sources */,
 				6444F8272981CE4700879DCB /* Int + extensions.swift in Sources */,
 				6444F7F82981539A00879DCB /* DetailPokemonViewModel.swift in Sources */,

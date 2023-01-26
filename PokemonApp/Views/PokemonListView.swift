@@ -12,65 +12,60 @@ struct PokemonListView: View {
     @StateObject private var viewModel = PokemonListViewModel()
 
     var body: some View {
-        ZStack {
-            switch viewModel.status {
-            case .sucsess:
-                NavigationView {
-                    VStack {
-                        List(viewModel.pokemonModel.results) { model in
-                            NavigationLink {
-                                DetailPokemonView(
-                                    viewModel: DetailPokemonViewModel(
-                                        service: viewModel.networkService,
-                                        name: model.name,
-                                        url: model.url
-                                    )
+        NavigationStack {
+            ZStack {
+                BackroundGradientView()
+                    .opacity(0.5)
+
+                    List(viewModel.pokemonModel.results) { model in
+                        NavigationLink {
+                            DetailPokemonView(
+                                viewModel: DetailPokemonViewModel(
+                                    service: viewModel.networkService,
+                                    name: model.name,
+                                    url: model.url
                                 )
-                            } label: {
-                                Text(model.name)
-                            }
-                            .font(.title2)
+                            )
+                        } label: {
+                            Text(model.name)
                         }
-                        .listStyle(.inset)
-
-                        HStack {
-                            Button {
-                                viewModel.switchPage(side: .left)
-                            } label: {
-                                Image(systemName: "arrowshape.turn.up.left.circle")
-                            }
-                            .disabled(viewModel.previousButtonDisable)
-
-                            Button {
-                                viewModel.switchPage(side: .right)
-                            } label: {
-                                Image(systemName: "arrowshape.turn.up.right.circle")
-                            }
-                            .disabled(viewModel.nextButtonDisable)
-                        }
-                        .font(.largeTitle)
+                        .font(.title2)
+                        .listRowBackground(Color.cyan.opacity(0.2))
                     }
-                    .navigationTitle("Pokemons")
-                }
-                .animation(.none, value: viewModel.status)
+                    .scrollContentBackground(.hidden)
 
-            case .failed(let error):
-                VStack {
+                .navigationTitle("Pokemons")
+                .preferredColorScheme(.dark)
+            }
+            .toolbar {
+                ToolbarItem(placement: .bottomBar) {
+                    HStack {
+                        Button {
+                            viewModel.switchPage(side: .left)
+                        } label: {
+                            Image(systemName: "arrowshape.turn.up.left.circle")
+                                .foregroundColor(
+                                    viewModel.previousButtonDisable ? .gray : .cyan
+                                        .opacity(0.8))
 
-                }
-            case .loading:
-                VStack {
-                    Text("Loading...")
-                    Text("Loading...")
-                    Text("Loading...")
-                    Text("Loading...")
+                        }
+                        .disabled(viewModel.previousButtonDisable)
+
+                        Button {
+                            viewModel.switchPage(side: .right)
+                        } label: {
+                            Image(systemName: "arrowshape.turn.up.right.circle")
+                                .foregroundColor(viewModel.nextButtonDisable ? .gray : .cyan.opacity(0.8))
+                        }
+                        .disabled(viewModel.nextButtonDisable)
+                    }
+                    .font(.largeTitle)
                 }
             }
-
-        }
-        .animation(.default, value: viewModel.status)
-        .task {
-            await viewModel.loadPokemonsData()
+            .animation(.default, value: viewModel.status)
+            .task {
+                await viewModel.loadPokemonsData()
+            }
         }
 
     }

@@ -13,13 +13,14 @@ struct DetailPokemonView: View {
 
     var body: some View {
         ZStack {
+            BackroundGradientView()
+                .opacity(0.5)
             switch viewModel.status {
 
             case .loading:
                 Text("Loading")
 
             case .sucsess:
-                Color.yellow.ignoresSafeArea()
                 VStack {
                     Text("Characterictics of \n\(Text(viewModel.name).bold())")
                         .font(.largeTitle)
@@ -52,7 +53,7 @@ struct DetailPokemonView: View {
                     .padding()
                 }
                 .frame(maxWidth: .infinity)
-                .background(.green)
+                .background(.bar)
                 .cornerRadius(16)
                 .padding()
 
@@ -90,8 +91,8 @@ struct DetailPokemonView_Previews: PreviewProvider {
         DetailPokemonView(
             viewModel: DetailPokemonViewModel(
                 service: NetworkDataService(),
-                name: "Pokemon",
-                url: "https://pokeapi.co/api/v2/pokemon/10263"
+                name: "bulbasaur",
+                url: "https://pokeapi.co/api/v2/pokemon/1/"
             )
         )
     }
