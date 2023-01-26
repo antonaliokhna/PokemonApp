@@ -15,6 +15,8 @@ struct ErrorView: View {
         VStack(spacing: 32) {
             Image(systemName: error.errorImagePath)
                 .font(.system(size: 80))
+                .foregroundColor(.accentColor)
+
             Text(error.localizedDescription)
                 .font(.title2)
                 .multilineTextAlignment(.center)
@@ -28,7 +30,7 @@ struct ErrorView: View {
                     Image(systemName: "restart.circle")
                 }
             }
-            .font(.title2)
+            .font(.title)
             .buttonStyle(.bordered)
         }
         .padding()
@@ -36,9 +38,10 @@ struct ErrorView: View {
 }
 struct ErrorView_Previews: PreviewProvider {
     static var previews: some View {
-        ErrorView(
-            error: .networkError(error: .invalidURL),
-            viewModel: PokemonListViewModel()
-        )
+        PokemonListView()
+//        ErrorView(
+//            error: .networkError(error: .invalidURL),
+//            viewModel: PokemonListViewModel()
+//        )
     }
 }
