@@ -32,7 +32,7 @@ final class PokemonListViewModel: ObservableObject {
 extension PokemonListViewModel {
     @MainActor
     func loadPokemonsData() async {
-        status = .loading
+        //status = .loading
         do {
             let model =
                 try await networkService.fetchPreviewPokemonListBy(
@@ -53,6 +53,8 @@ extension PokemonListViewModel {
     }
 
     func switchPage(side: DirectionSide) {
+        status = .loading
+
         switch side {
         case .left:
             currentPage.decrement()

@@ -19,8 +19,6 @@ struct PokemonListView: View {
 
                 VStack {
                     switch viewModel.status {
-                    case .failed(let error):
-                        ErrorView(error: error, viewModel: viewModel)
                     case .sucsess:
                         List(viewModel.pokemonModel.results) { model in
                             NavigationLink {
@@ -40,7 +38,9 @@ struct PokemonListView: View {
                         .scrollContentBackground(.hidden)
 
                     case .loading:
-                        Text("Loading...")
+                       LoadingAnimationView()
+                    case .failed(let error):
+                        ErrorView(error: error, viewModel: viewModel)
                     }
                 }
             }
