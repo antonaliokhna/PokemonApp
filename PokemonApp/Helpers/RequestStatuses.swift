@@ -12,3 +12,14 @@ enum RequestStatuses {
     case sucsess
     case loading
 }
+
+//RequestStatuses: Equatable
+extension RequestStatuses: Equatable {
+    static func == (lhs: RequestStatuses, rhs: RequestStatuses) -> Bool {
+        lhs.value == rhs.value
+    }
+
+    private var value: String? {
+        return String(describing: self).components(separatedBy: "(").first
+    }
+}
