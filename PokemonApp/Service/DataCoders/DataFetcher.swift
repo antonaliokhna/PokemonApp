@@ -7,7 +7,7 @@
 
 import Foundation
 
-class DataFetcher: DataFetcherType {
+final class DataFetcher: DataFetcherType {
 
     private let service: DataFetcherServiceType
 
