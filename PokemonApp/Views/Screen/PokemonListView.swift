@@ -46,17 +46,8 @@ struct PokemonListView: View {
                 viewModel.switchPage(side: .left)
             } label: {
                 Image(systemName: "chevron.left.circle")
-                    .foregroundColor(
-                        viewModel.previousButtonDisable
-                        ? .gray
-                        : .cyan.opacity(0.8)
-                    )
-                    .shadow(
-                        color:
-                            viewModel.previousButtonDisable
-                                ? .gray.opacity(0.8)
-                                : .cyan.opacity(0.8),
-                        radius: 5
+                    .modifier(CustomNeonViewModifier(
+                        logicValue: viewModel.previousButtonDisable)
                     )
             }
             .disabled(viewModel.previousButtonDisable)
@@ -65,17 +56,8 @@ struct PokemonListView: View {
                 viewModel.switchPage(side: .right)
             } label: {
                 Image(systemName: "chevron.right.circle")
-                    .foregroundColor(
-                        viewModel.nextButtonDisable
-                        ? .gray
-                        : .cyan.opacity(0.8)
-                    )
-                    .shadow(
-                        color:
-                            viewModel.nextButtonDisable
-                                ? .gray.opacity(0.8)
-                                : .cyan.opacity(0.8),
-                        radius: 5
+                    .modifier(CustomNeonViewModifier(
+                        logicValue: viewModel.nextButtonDisable)
                     )
             }
             .disabled(viewModel.nextButtonDisable)
