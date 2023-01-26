@@ -17,26 +17,36 @@ struct PokemonListView: View {
                 BackroundGradientView()
                     .opacity(0.5)
 
-                    List(viewModel.pokemonModel.results) { model in
-                        NavigationLink {
-                            DetailPokemonView(
-                                viewModel: DetailPokemonViewModel(
-                                    service: viewModel.networkService,
-                                    name: model.name,
-                                    url: model.url
+                VStack {
+                    switch viewModel.status {
+                    case .failed(let error):
+                        ErrorView(error: error, viewModel: viewModel)
+                    case .sucsess:
+                        List(viewModel.pokemonModel.results) { model in
+                            NavigationLink {
+                                DetailPokemonView(
+                                    viewModel: DetailPokemonViewModel(
+                                        service: viewModel.networkService,
+                                        name: model.name,
+                                        url: model.url
+                                    )
                                 )
-                            )
-                        } label: {
-                            Text(model.name)
+                            } label: {
+                                Text(model.name)
+                            }
+                            .font(.title2)
+                            .listRowBackground(Color.cyan.opacity(0.2))
                         }
-                        .font(.title2)
-                        .listRowBackground(Color.cyan.opacity(0.2))
-                    }
-                    .scrollContentBackground(.hidden)
+                        .scrollContentBackground(.hidden)
 
-                .navigationTitle("Pokemons")
-                .preferredColorScheme(.dark)
+                    case .loading:
+                        Text("Loading...")
+                    }
+                }
             }
+            .animation(.default, value: viewModel.status)
+            .preferredColorScheme(.dark)
+            .navigationTitle("Pokemons")
             .toolbar {
                 ToolbarItem(placement: .bottomBar) {
                     HStack {
@@ -62,12 +72,10 @@ struct PokemonListView: View {
                     .font(.largeTitle)
                 }
             }
-            .animation(.default, value: viewModel.status)
             .task {
                 await viewModel.loadPokemonsData()
             }
         }
-
     }
 }
 

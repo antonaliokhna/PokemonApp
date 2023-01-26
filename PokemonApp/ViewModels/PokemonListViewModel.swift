@@ -64,4 +64,12 @@ extension PokemonListViewModel {
             await loadPokemonsData()
         }
     }
+
+    func reloadPokemonData() {
+        status = .loading
+        Task {
+            try? await Task.sleep(nanoseconds: 500_000_000)
+            await loadPokemonsData()
+        }
+    }
 }
