@@ -20,62 +20,76 @@ struct PokemonListView: View {
                 VStack {
                     switch viewModel.status {
                     case .sucsess:
-                        List(viewModel.pokemonModel.results) { model in
-                            NavigationLink {
-                                DetailPokemonView(
-                                    viewModel: DetailPokemonViewModel(
-                                        service: viewModel.networkService,
-                                        name: model.capitalizedName,
-                                        url: model.url
-                                    )
-                                )
-                            } label: {
-                                Text(model.capitalizedName)
-                            }
-                            .font(.title2)
-                            .listRowBackground(Color.cyan.opacity(0.2))
-                        }
-                        .scrollContentBackground(.hidden)
-
+                        secsessList
                     case .loading:
-                       LoadingAnimationView()
+                        LoadingAnimationView()
                     case .failed(let error):
                         ErrorView(error: error, viewModel: viewModel)
                     }
                 }
             }
-            .animation(.default, value: viewModel.status)
-            .preferredColorScheme(.dark)
             .navigationTitle("Pokemons")
+            .preferredColorScheme(.dark)
+            .animation(.default, value: viewModel.status)
             .toolbar {
-                ToolbarItem(placement: .bottomBar) {
-                    HStack {
-                        Button {
-                            viewModel.switchPage(side: .left)
-                        } label: {
-                            Image(systemName: "arrowshape.turn.up.left.circle")
-                                .foregroundColor(
-                                    viewModel.previousButtonDisable ? .gray : .cyan
-                                        .opacity(0.8))
-
-                        }
-                        .disabled(viewModel.previousButtonDisable)
-
-                        Button {
-                            viewModel.switchPage(side: .right)
-                        } label: {
-                            Image(systemName: "arrowshape.turn.up.right.circle")
-                                .foregroundColor(viewModel.nextButtonDisable ? .gray : .cyan.opacity(0.8))
-                        }
-                        .disabled(viewModel.nextButtonDisable)
-                    }
-                    .font(.largeTitle)
+                ToolbarItemGroup(placement: .status) {
+                    toolbarStack
                 }
             }
             .task {
                 await viewModel.loadPokemonsData()
             }
         }
+    }
+
+    private var toolbarStack: some View {
+        HStack(spacing: 24) {
+            Button {
+                viewModel.switchPage(side: .left)
+            } label: {
+                Image(systemName: "arrowshape.turn.up.left.circle")
+                    .foregroundColor(
+                        viewModel.previousButtonDisable
+                        ? .gray
+                        : .cyan.opacity(0.8)
+                    )
+
+            }
+            .disabled(viewModel.previousButtonDisable)
+
+            Button {
+                viewModel.switchPage(side: .right)
+            } label: {
+                Image(systemName: "arrowshape.turn.up.right.circle")
+                    .foregroundColor(
+                        viewModel.nextButtonDisable
+                        ? .gray
+                        : .cyan.opacity(0.8)
+                    )
+            }
+            .disabled(viewModel.nextButtonDisable)
+        }
+        .font(.largeTitle)
+        .offset(y: 8)
+    }
+
+    private var secsessList: some View {
+        List(viewModel.pokemonModel.results) { model in
+            NavigationLink {
+                DetailPokemonView(
+                    viewModel: DetailPokemonViewModel(
+                        service: viewModel.networkService,
+                        name: model.capitalizedName,
+                        url: model.url
+                    )
+                )
+            } label: {
+                Text(model.capitalizedName)
+            }
+            .font(.title2)
+            .listRowBackground(Color.cyan.opacity(0.2))
+        }
+        .scrollContentBackground(.hidden)
     }
 }
 
