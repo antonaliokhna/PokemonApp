@@ -42,6 +42,8 @@ extension PokemonListViewModel {
             self.status = .sucsess
 
         } catch {
+            self.pokemonModel.count = 0
+            
             guard let error = error as? CustomError else {
                 self.status = .failed(error: .localError(error: .unknownError))
 
