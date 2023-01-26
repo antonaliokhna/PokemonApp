@@ -19,61 +19,9 @@ struct DetailPokemonView: View {
             switch viewModel.status {
             case .sucsess:
                 VStack {
-                    VStack {
-                        Text("Hi👋, i'am")
-                            .font(.largeTitle)
-
-                        Text(viewModel.name)
-                            .font(.system(size: 42))
-                            .bold()
-                            .multilineTextAlignment(.center)
-                    }
-
-                    VStack {
-                        Text("Sooo... About me 😀")
-                            .font(.title)
-                            .multilineTextAlignment(.center)
-                            .padding(.top)
-
-                        VStack(alignment: .center, spacing: 12) {
-                            Text("Type: \(Text(viewModel.type).bold())")
-                            Text("Weight: \(Text(viewModel.weight).bold()) kg")
-                            Text("Height: \(Text(viewModel.height).bold()) cm")
-                            Text("Default: \(Text(viewModel.isDefault).bold())")
-                            Text("Ability's: \(Text(viewModel.ability).bold())")
-                        }
-                        .font(.title3)
-                        .multilineTextAlignment(.center)
-                        .padding()
-                    }
-                    .frame(maxWidth: .infinity)
-                    .background(.bar)
-                    .cornerRadius(16)
-                    .padding()
-                    .shadow(radius: 20)
-
-                    VStack {
-                        Text("My photo 😇")
-                            .font(.title)
-
-                        AsyncImage(url: viewModel.imageUrl) { image in
-                            image
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: 128, height: 128)
-
-                        } placeholder: {
-                            LoadingAnimationView()
-                        }
-
-                        Text("I'am pretty?... 👉👈")
-                            .font(.subheadline)
-                    }
-                    .padding(.horizontal)
-                    .padding()
-                    .background(.bar)
-                    .cornerRadius(16)
-                    .shadow(radius: 20)
+                    headerBlock
+                    aboutBlock
+                    imageBlock
                 }
 
             case .loading:
@@ -87,6 +35,73 @@ struct DetailPokemonView: View {
         .task {
             await viewModel.loadPokemonData()
         }
+    }
+
+    private var headerBlock: some View {
+        VStack {
+            Text("Hi👋, i'am")
+                .font(.largeTitle)
+                .fontWeight(.thin)
+
+            Text(viewModel.name)
+                .font(.system(size: 42))
+                .fontWeight(.regular)
+                .multilineTextAlignment(.center)
+        }
+    }
+
+    private var aboutBlock: some View {
+        VStack {
+            Text("Sooo... About me 😀")
+                .font(.title)
+                .fontWeight(.thin)
+                .multilineTextAlignment(.center)
+                .padding(.top)
+
+            VStack(alignment: .center, spacing: 12) {
+                Text("Type: \(Text(viewModel.type).bold())")
+                Text("Weight: \(Text(viewModel.weight).bold()) kg")
+                Text("Height: \(Text(viewModel.height).bold()) cm")
+                Text("Default: \(Text(viewModel.isDefault).bold())")
+                Text("Ability's: \(Text(viewModel.ability).bold())")
+            }
+            .font(.body)
+            .fontWeight(.light)
+            .multilineTextAlignment(.center)
+            .padding()
+        }
+        .frame(maxWidth: .infinity)
+        .background(.bar)
+        .cornerRadius(16)
+        .padding()
+        .shadow(radius: 20)
+    }
+
+    private var imageBlock: some View {
+        VStack {
+            Text("My photo 😇")
+                .font(.title)
+                .fontWeight(.thin)
+
+            AsyncImage(url: viewModel.imageUrl) { image in
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+
+            } placeholder: {
+                LoadingAnimationView()
+            }
+            .frame(width: 128, height: 128)
+
+            Text("I'am pretty?... 👉👈")
+                .font(.subheadline)
+                .italic()
+        }
+        .padding(.horizontal)
+        .padding()
+        .background(.bar)
+        .cornerRadius(16)
+        .shadow(radius: 20)
     }
 }
 
