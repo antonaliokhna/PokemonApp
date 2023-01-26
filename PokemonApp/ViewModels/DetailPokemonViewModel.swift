@@ -37,7 +37,7 @@ extension DetailPokemonViewModel {
     @MainActor
     func loadPokemonData() async {
         do {
-            let model = try await networkService.fetchDetailPokemonBy(url: url)
+            let model = try await self.networkService.fetchDetailPokemonBy(url: url)
 
             self.name = model.name.capitalized
             self.weight = model.weight.description

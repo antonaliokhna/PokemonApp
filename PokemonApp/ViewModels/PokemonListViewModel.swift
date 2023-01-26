@@ -34,7 +34,7 @@ extension PokemonListViewModel {
     func loadPokemonsData() async {
         do {
             let model =
-                try await networkService.fetchPreviewPokemonListBy(
+                try await self.networkService.fetchPreviewPokemonListBy(
                     page: currentPage
                 )
 
