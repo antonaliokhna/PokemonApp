@@ -9,12 +9,12 @@ import Foundation
 
 final class PokemonListViewModel: ObservableObject {
 
-    var networkService: NetworkDataService = NetworkDataService()
+    private(set) var networkService: NetworkDataService = NetworkDataService()
 
     @Published private(set) var currentPage: Int = 1
-    @Published private(set) var countPages: Int = 0
-    @Published var pokemonModel: PokemonListModel = PokemonListModel()
-    @Published var status: RequestStatuses = .loading
+    @Published private(set) var countPages: Int = 1
+    @Published private(set) var pokemonModel: PokemonListModel = PokemonListModel()
+    @Published private(set) var status: RequestStatuses = .loading
 
     var previousButtonDisable: Bool {
         return currentPage <= 1

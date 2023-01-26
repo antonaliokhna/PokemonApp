@@ -12,14 +12,14 @@ final class DetailPokemonViewModel: ObservableObject {
     private let networkService: NetworkDataService
     private let url: String
 
-    @Published var status: RequestStatuses = .loading
-    @Published var name: String = ""
-    @Published var type: String = ""
-    @Published var weight: String = ""
-    @Published var height: String = ""
-    @Published var ability: String = ""
-    @Published var isDefault: String = ""
-    @Published var imageUrl: URL?
+    @Published private(set) var status: RequestStatuses = .loading
+    @Published private(set) var name: String = ""
+    @Published private(set) var type: String = ""
+    @Published private(set) var weight: String = ""
+    @Published private(set) var height: String = ""
+    @Published private(set) var ability: String = ""
+    @Published private(set) var isDefault: String = ""
+    @Published private(set) var imageUrl: URL?
 
     init(
         service: NetworkDataService,
