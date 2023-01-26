@@ -130,9 +130,9 @@
 			isa = PBXGroup;
 			children = (
 				6444F8352982C60F00879DCB /* Screen */,
+				6444F8372982C67300879DCB /* Modifiers */,
 				6444F82F29829C0600879DCB /* ErrorView.swift */,
 				6444F8312982A24000879DCB /* LoadingAnimationView.swift */,
-				6444F8332982C3A700879DCB /* CustomDetailBlockViewModifier.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -249,6 +249,14 @@
 				6444F7DD2981256B00879DCB /* PokemonListView.swift */,
 			);
 			path = Screen;
+			sourceTree = "<group>";
+		};
+		6444F8372982C67300879DCB /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				6444F8332982C3A700879DCB /* CustomDetailBlockViewModifier.swift */,
+			);
+			path = Modifiers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
