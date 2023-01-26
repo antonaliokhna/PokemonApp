@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ErrorView: View {
     let error: CustomError
-    let viewModel: PokemonListViewModel
+    let viewModel: ReloableDataType
 
     var body: some View {
         VStack(spacing: 32) {
@@ -22,7 +22,7 @@ struct ErrorView: View {
                 .multilineTextAlignment(.center)
 
             Button() {
-                viewModel.reloadPokemonData()
+                viewModel.reloadData()
             } label: {
                 Label {
                     Text("Reload")
@@ -38,10 +38,9 @@ struct ErrorView: View {
 }
 struct ErrorView_Previews: PreviewProvider {
     static var previews: some View {
-        PokemonListView()
-//        ErrorView(
-//            error: .networkError(error: .invalidURL),
-//            viewModel: PokemonListViewModel()
-//        )
+        ErrorView(
+            error: .networkError(error: .invalidURL),
+            viewModel: PokemonListViewModel()
+        )
     }
 }

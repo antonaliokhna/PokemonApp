@@ -65,8 +65,11 @@ extension PokemonListViewModel {
             await loadPokemonsData()
         }
     }
+}
 
-    func reloadPokemonData() {
+//MARK: ReloableDataType
+extension PokemonListViewModel: ReloableDataType {
+    func reloadData() {
         status = .loading
 
         Task {

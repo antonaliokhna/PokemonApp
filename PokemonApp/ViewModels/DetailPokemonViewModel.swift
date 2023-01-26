@@ -63,8 +63,12 @@ extension DetailPokemonViewModel {
             self.status = .failed(error: error)
         }
     }
+}
 
-    func reloadPokemonData() {
+
+//MARK: ReloableDataType
+extension DetailPokemonViewModel: ReloableDataType {
+    func reloadData() {
         status = .loading
 
         Task {
