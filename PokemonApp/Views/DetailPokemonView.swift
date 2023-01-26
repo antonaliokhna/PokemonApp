@@ -15,69 +15,73 @@ struct DetailPokemonView: View {
         ZStack {
             BackroundGradientView()
                 .opacity(0.5)
+
             switch viewModel.status {
-
-            case .loading:
-                Text("Loading")
-
             case .sucsess:
                 VStack {
-                    Text("Characterictics of \n\(Text(viewModel.name).bold())")
-                        .font(.largeTitle)
-                        .multilineTextAlignment(.center)
+                    VStack {
+                        Text("Hi👋, i'am")
+                            .font(.largeTitle)
 
-                    HStack() {
-                        VStack(alignment: .leading) {
-                            Text("Pokemon type: \(Text(viewModel.type).bold())")
-                            Text("Weight (kg): \(Text(viewModel.weight).bold())")
-                            Text("Height (cm): \(Text(viewModel.height).bold())")
+                        Text(viewModel.name)
+                            .font(.system(size: 42))
+                            .bold()
+                            .multilineTextAlignment(.center)
+                    }
+
+                    VStack {
+                        Text("Sooo... About me 😀")
+                            .font(.title)
+                            .multilineTextAlignment(.center)
+                            .padding(.top)
+
+                        VStack(alignment: .center, spacing: 12) {
+                            Text("Type: \(Text(viewModel.type).bold())")
+                            Text("Weight: \(Text(viewModel.weight).bold()) kg")
+                            Text("Height: \(Text(viewModel.height).bold()) cm")
                             Text("Default: \(Text(viewModel.isDefault).bold())")
                             Text("Ability's: \(Text(viewModel.ability).bold())")
                         }
-                        .padding(.trailing)
+                        .font(.title3)
+                        .multilineTextAlignment(.center)
+                        .padding()
+                    }
+                    .frame(maxWidth: .infinity)
+                    .background(.bar)
+                    .cornerRadius(16)
+                    .padding()
+                    .shadow(radius: 20)
 
-                        Spacer()
+                    VStack {
+                        Text("My photo 😇")
+                            .font(.title)
 
                         AsyncImage(url: viewModel.imageUrl) { image in
                             image
                                 .resizable()
-                                .aspectRatio(contentMode: .fit)
+                                .aspectRatio(contentMode: .fill)
                                 .frame(width: 128, height: 128)
 
                         } placeholder: {
-                            ProgressView()
-                                .progressViewStyle(CircularProgressViewStyle(tint: .yellow))
-                                .scaleEffect(3)
+                            LoadingAnimationView()
                         }
+
+                        Text("I'am pretty?... 👉👈")
+                            .font(.subheadline)
                     }
+                    .padding(.horizontal)
                     .padding()
+                    .background(.bar)
+                    .cornerRadius(16)
+                    .shadow(radius: 20)
                 }
-                .frame(maxWidth: .infinity)
-                .background(.bar)
-                .cornerRadius(16)
-                .padding()
+
+            case .loading:
+                LoadingAnimationView()
 
             case .failed(let error):
-                VStack(spacing: 32) {
-                    Image(systemName: error.errorImagePath)
-                        .font(.system(size: 80))
-                    Text(error.localizedDescription)
-                        .font(.title2)
-                        .multilineTextAlignment(.center)
-
-                    Button() {
-                        viewModel.reloadPokemonData()
-                    } label: {
-                        Label {
-                            Text("Reload")
-                        } icon: {
-                            Image(systemName: "restart.circle")
-                        }
-                    }
-                    .font(.title2)
-                    .buttonStyle(.bordered)
-                }
-                .padding()
+                //TODO: change view
+                ErrorView(error: error, viewModel: PokemonListViewModel())
             }
         }
         .task {
