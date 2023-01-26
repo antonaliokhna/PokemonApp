@@ -40,8 +40,8 @@ extension DetailPokemonViewModel {
             let model = try await self.networkService.fetchDetailPokemonBy(url: url)
 
             self.name = model.name.capitalized
-            self.weight = model.weight.description
-            self.height = model.height.description
+            self.weight = model.weight.formatted(.number)
+            self.height = model.height.formatted(.number)
             self.imageUrl = model.sprites.frontDefault
             self.isDefault = model.isDefault ? "Yes" : "No"
             self.type = model.types
