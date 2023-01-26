@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct BackroundGradientView: View {
+
     @Environment(\.colorScheme) private var colorScheme: ColorScheme
+
     var body: some View {
         let cutomColorScheme =
             colorScheme == .dark

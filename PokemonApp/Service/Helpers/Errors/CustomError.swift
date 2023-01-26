@@ -30,9 +30,9 @@ extension CustomError: LocalizedError {
     }
 }
 
-//MARK: Getting error image path
+//MARK: Getting error image name
 extension CustomError {
-    var errorImagePath: String {
+    var errorImageName: String {
         let imagePath: String
         switch self {
         case .networkError:

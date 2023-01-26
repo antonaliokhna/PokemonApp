@@ -13,7 +13,7 @@ enum RequestStatuses {
     case loading
 }
 
-//MARK: RequestStatuses: Equatable
+//MARK: Equatable
 extension RequestStatuses: Equatable {
     static func == (lhs: RequestStatuses, rhs: RequestStatuses) -> Bool {
         lhs.value == rhs.value

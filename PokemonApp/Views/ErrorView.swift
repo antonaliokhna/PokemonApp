@@ -13,7 +13,7 @@ struct ErrorView: View {
 
     var body: some View {
         VStack(spacing: 32) {
-            Image(systemName: error.errorImagePath)
+            Image(systemName: error.errorImageName)
                 .font(.system(size: 80))
                 .foregroundColor(.accentColor)
 

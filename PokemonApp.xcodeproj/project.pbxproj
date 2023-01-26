@@ -135,6 +135,7 @@
 				6444F8372982C67300879DCB /* Modifiers */,
 				6444F82F29829C0600879DCB /* ErrorView.swift */,
 				6444F8312982A24000879DCB /* LoadingAnimationView.swift */,
+				6444F82D2982759E00879DCB /* BackroundGradientView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -240,7 +241,6 @@
 				6444F8292981CF9400879DCB /* DirectionSide.swift */,
 				6444F7FF29815CBC00879DCB /* RequestStatuses.swift */,
 				6444F82B29826F4E00879DCB /* ColorTheme.swift */,
-				6444F82D2982759E00879DCB /* BackroundGradientView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";

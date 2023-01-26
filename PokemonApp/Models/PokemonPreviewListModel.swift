@@ -24,7 +24,7 @@ extension PokemonListModel {
     }
 }
 
-//MARK: PokemonPreviewListModel Identifiable
+//MARK: PokemonPreviewListModel: Identifiable
 extension PokemonListModel.PokemonPreviewListModel: Identifiable {
     var id: String {
         return name
