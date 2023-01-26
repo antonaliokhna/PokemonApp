@@ -31,8 +31,7 @@ struct DetailPokemonView: View {
                 LoadingAnimationView()
 
             case .failed(let error):
-                //TODO: change view
-                ErrorView(error: error, viewModel: PokemonListViewModel())
+                ErrorView(error: error, viewModel: viewModel)
             }
         }
         .task {
