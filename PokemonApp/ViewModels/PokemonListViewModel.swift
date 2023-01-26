@@ -32,7 +32,6 @@ final class PokemonListViewModel: ObservableObject {
 extension PokemonListViewModel {
     @MainActor
     func loadPokemonsData() async {
-        //status = .loading
         do {
             let model =
                 try await networkService.fetchPreviewPokemonListBy(
@@ -69,8 +68,10 @@ extension PokemonListViewModel {
 
     func reloadPokemonData() {
         status = .loading
+
         Task {
-            try? await Task.sleep(nanoseconds: 500_000_000)
+            //Sleep 0.5 sec for the animation to appear on the screen
+            try? await Task.sleep(for: .seconds(0.5))
             await loadPokemonsData()
         }
     }

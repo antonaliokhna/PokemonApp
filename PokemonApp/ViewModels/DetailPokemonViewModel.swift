@@ -56,7 +56,7 @@ extension DetailPokemonViewModel {
 
         } catch {
             guard let error = error as? CustomError else {
-                status = .failed(error: .localError(error: .unknownError))
+                self.status = .failed(error: .localError(error: .unknownError))
 
                 return
             }
@@ -66,7 +66,10 @@ extension DetailPokemonViewModel {
 
     func reloadPokemonData() {
         status = .loading
+
         Task {
+            //Sleep 0.5 sec for the animation to appear on the screen
+            try? await Task.sleep(for: .seconds(0.5))
             await loadPokemonData()
         }
     }
