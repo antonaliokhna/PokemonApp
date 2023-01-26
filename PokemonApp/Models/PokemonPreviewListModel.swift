@@ -17,6 +17,10 @@ extension PokemonListModel {
     struct PokemonPreviewListModel: Codable {
         let name: String
         let url: String
+
+        var capitalizedName: String {
+            return name.capitalized
+        }
     }
 }
 

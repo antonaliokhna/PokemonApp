@@ -8,27 +8,14 @@
 import Foundation
 
 struct DetailPokemonModel: Codable {
-
-    private let sprites: Sprites
-    private let types: [Types]
-    private let abilities: [Ability]
-
     let name: String
     let height: Double
     let weight: Double
     let isDefault: Bool
 
-    var type: String {
-        types.map { $0.type.name }.joined(separator: ", ")
-    }
-
-    var image: URL {
-        sprites.frontDefault
-    }
-
-    var abilitiesString: String {
-        abilities.map { $0.ability.name }.joined(separator: ", ")
-    }
+    let sprites: Sprites
+    let types: [Types]
+    let abilities: [Ability]
 }
 
 //MARK: DetailPokemonModel structures

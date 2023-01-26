@@ -25,12 +25,12 @@ struct PokemonListView: View {
                                 DetailPokemonView(
                                     viewModel: DetailPokemonViewModel(
                                         service: viewModel.networkService,
-                                        name: model.name,
+                                        name: model.capitalizedName,
                                         url: model.url
                                     )
                                 )
                             } label: {
-                                Text(model.name)
+                                Text(model.capitalizedName)
                             }
                             .font(.title2)
                             .listRowBackground(Color.cyan.opacity(0.2))
