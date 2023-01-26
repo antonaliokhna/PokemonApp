@@ -12,46 +12,67 @@ struct PokemonListView: View {
     @StateObject private var viewModel = PokemonListViewModel()
 
     var body: some View {
-        NavigationView {
-            VStack {
-                List(viewModel.pokemonModel.results) { model in
-                    NavigationLink {
-                        DetailPokemonView(
-                            viewModel: DetailPokemonViewModel(
-                                service: viewModel.networkService,
-                                name: model.name,
-                                url: model.url
-                            )
-                        )
-                    } label: {
-                        Text(model.name)
-                    }
-                    .font(.title2)
-                }
-                .listStyle(.inset)
+        ZStack {
+            switch viewModel.status {
+            case .sucsess:
+                NavigationView {
+                    VStack {
+                        List(viewModel.pokemonModel.results) { model in
+                            NavigationLink {
+                                DetailPokemonView(
+                                    viewModel: DetailPokemonViewModel(
+                                        service: viewModel.networkService,
+                                        name: model.name,
+                                        url: model.url
+                                    )
+                                )
+                            } label: {
+                                Text(model.name)
+                            }
+                            .font(.title2)
+                        }
+                        .listStyle(.inset)
 
-                HStack {
-                    Button {
-                        viewModel.switchPage(side: .left)
-                    } label: {
-                        Image(systemName: "arrowshape.turn.up.left.circle")
-                    }
-                    .disabled(viewModel.previousButtonDisable)
+                        HStack {
+                            Button {
+                                viewModel.switchPage(side: .left)
+                            } label: {
+                                Image(systemName: "arrowshape.turn.up.left.circle")
+                            }
+                            .disabled(viewModel.previousButtonDisable)
 
-                    Button {
-                        viewModel.switchPage(side: .right)
-                    } label: {
-                        Image(systemName: "arrowshape.turn.up.right.circle")
+                            Button {
+                                viewModel.switchPage(side: .right)
+                            } label: {
+                                Image(systemName: "arrowshape.turn.up.right.circle")
+                            }
+                            .disabled(viewModel.nextButtonDisable)
+                        }
+                        .font(.largeTitle)
                     }
-                    .disabled(viewModel.nextButtonDisable)
+                    .navigationTitle("Pokemons")
                 }
-                .font(.largeTitle)
+                .animation(.none, value: viewModel.status)
+
+            case .failed(let error):
+                VStack {
+
+                }
+            case .loading:
+                VStack {
+                    Text("Loading...")
+                    Text("Loading...")
+                    Text("Loading...")
+                    Text("Loading...")
+                }
             }
-            .navigationTitle("Pokemons")
+
         }
+        .animation(.default, value: viewModel.status)
         .task {
             await viewModel.loadPokemonsData()
         }
+
     }
 }
 
