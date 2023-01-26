@@ -39,6 +39,7 @@ struct LoadingAnimationView: View {
             .fill(.blue)
             .frame(width: 20, height: 20)
             .scaleEffect(shouldAnimate ? 1.0 : 0.5)
+            .shadow(color: .cyan.opacity(0.5), radius: 10)
     }
 }
 
