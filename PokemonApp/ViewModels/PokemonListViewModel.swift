@@ -9,22 +9,19 @@ import Foundation
 
 final class PokemonListViewModel: ObservableObject {
 
-    private var currentPage: Int = 0
     var networkService: NetworkDataService = NetworkDataService()
 
+    @Published private(set) var currentPage: Int = 1
+    @Published private(set) var countPages: Int = 0
     @Published var pokemonModel: PokemonListModel = PokemonListModel()
     @Published var status: RequestStatuses = .loading
 
     var previousButtonDisable: Bool {
-        return currentPage <= 0
+        return currentPage <= 1
     }
 
     var nextButtonDisable: Bool {
-        let value = currentPage *
-            ApiDefaultSettings.step +
-            ApiDefaultSettings.step
-
-        return pokemonModel.count < value
+        return currentPage >= countPages || pokemonModel.count == 0
     }
 }
 
@@ -39,11 +36,15 @@ extension PokemonListViewModel {
                 )
 
             self.pokemonModel = model
+
+            let countPage = model.count / ApiDefaultSettings.step
+            self.countPages = Int(exactly: countPage) ?? 0
+
             self.status = .sucsess
 
         } catch {
             self.pokemonModel.count = 0
-            
+
             guard let error = error as? CustomError else {
                 self.status = .failed(error: .localError(error: .unknownError))
 

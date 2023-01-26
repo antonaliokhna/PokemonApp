@@ -33,6 +33,29 @@ struct PokemonListView: View {
                 ToolbarItemGroup(placement: .status) {
                     toolbarStack
                 }
+//                ToolbarItem(placement: .bottomBar) {
+//                    Button {
+//                        viewModel.switchPage(side: .left)
+//                    } label: {
+//                        Image(systemName: "chevron.left.circle")
+//                            .modifier(CustomNeonViewModifier(
+//                                logicValue: viewModel.previousButtonDisable)
+//                            )
+//                    }
+//                    .disabled(viewModel.previousButtonDisable)
+//                }
+//
+//                ToolbarItem(placement: .bottomBar) {
+//                    Button {
+//                        viewModel.switchPage(side: .left)
+//                    } label: {
+//                        Image(systemName: "chevron.right.circle")
+//                            .modifier(CustomNeonViewModifier(
+//                                logicValue: viewModel.previousButtonDisable)
+//                            )
+//                    }
+//                    .disabled(viewModel.previousButtonDisable)
+//                }
             }
             .task {
                 await viewModel.loadPokemonsData()
@@ -51,6 +74,16 @@ struct PokemonListView: View {
                     )
             }
             .disabled(viewModel.previousButtonDisable)
+
+            HStack {
+                Text(viewModel.currentPage.formatted())
+                    .frame(width: 38)
+                Text("/")
+                Text(viewModel.countPages.formatted())
+                    .frame(width: 38)
+            }
+            .font(.title)
+            .frame(width: 104)
 
             Button {
                 viewModel.switchPage(side: .right)
