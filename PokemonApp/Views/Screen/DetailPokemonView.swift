@@ -48,7 +48,7 @@ struct DetailPokemonView: View {
                 .font(.system(size: 42))
                 .fontWeight(.regular)
                 .multilineTextAlignment(.center)
-                .shadow(color: .cyan.opacity(0.5), radius: 5)
+                .shadow(color: .teal.opacity(0.5), radius: 5)
         }
     }
 
@@ -59,16 +59,7 @@ struct DetailPokemonView: View {
                 .fontWeight(.thin)
                 .multilineTextAlignment(.center)
 
-            VStack(alignment: .center, spacing: 12) {
-                Text("Type: \(Text(viewModel.type).bold())")
-                Text("Weight: \(Text(viewModel.weight).bold()) kg")
-                Text("Height: \(Text(viewModel.height).bold()) cm")
-                Text("Default: \(Text(viewModel.isDefault).bold())")
-                Text("Ability's: \(Text(viewModel.ability).bold())")
-            }
-            .font(.body)
-            .fontWeight(.light)
-            .multilineTextAlignment(.center)
+            textAboutBlockCharacteristics
         }
         .frame(maxWidth: .infinity)
         .modifier(CustomDetailBlockViewModifier())
@@ -93,9 +84,59 @@ struct DetailPokemonView: View {
             Text("I'am pretty?... 👉👈")
                 .font(.subheadline)
                 .italic()
+                .shadow(color: .cyan.opacity(0.3), radius: 5)
         }
         .padding(.horizontal)
         .modifier(CustomDetailBlockViewModifier())
+    }
+
+    private var textAboutBlockCharacteristics: some View {
+        VStack(alignment: .center, spacing: 12) {
+            getCustomNeonTextBy(
+                title: "Type:",
+                text: viewModel.type
+            )
+            getCustomNeonTextBy(
+                title: "Weight:",
+                text: viewModel.weight,
+                closerText: "kg"
+            )
+            getCustomNeonTextBy(
+                title: "Height:",
+                text: viewModel.height,
+                closerText: "cm"
+            )
+            getCustomNeonTextBy(
+                title: "Default:",
+                text: viewModel.isDefault
+            )
+            getCustomNeonTextBy(
+                title: "Ability's:",
+                text: viewModel.ability
+            )
+        }
+        .font(.body)
+        .fontWeight(.light)
+        .multilineTextAlignment(.center)
+    }
+}
+
+//MARK: Helpful DetailPokemonView private functions
+extension DetailPokemonView {
+    private func getCustomNeonTextBy(
+        title: String,
+        text: String,
+        closerText: String = ""
+    ) -> some View {
+        return HStack {
+            Text(title)
+
+            Text(text)
+                .bold()
+                .shadow(color: .cyan.opacity(0.3), radius: 5)
+
+            Text(closerText)
+        }
     }
 }
 
