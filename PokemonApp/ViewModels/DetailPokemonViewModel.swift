@@ -65,7 +65,6 @@ extension DetailPokemonViewModel {
     }
 }
 
-
 //MARK: ReloableDataType
 extension DetailPokemonViewModel: ReloableDataType {
     func reloadData() {
