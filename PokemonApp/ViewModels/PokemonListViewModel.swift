@@ -32,13 +32,14 @@ extension PokemonListViewModel {
         do {
             let model =
                 try await self.networkService.fetchPreviewPokemonListBy(
-                    page: currentPage
+                    page: currentPage - 1
                 )
 
-            self.pokemonModel = model
-
-            let countPage = model.count / ApiDefaultSettings.step
+            let countPage = round(
+                Double(model.count) / Double(ApiDefaultSettings.step)
+            )
             self.countPages = Int(exactly: countPage) ?? 0
+            self.pokemonModel = model
 
             self.status = .sucsess
 
