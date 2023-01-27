@@ -27,7 +27,7 @@ struct PokemonListView: View {
                     }
                 }
             }
-            .navigationTitle("Pokemon's")
+            .navigationTitle("Pokemons")
             .animation(.default, value: viewModel.status)
             .toolbar {
                 ToolbarItemGroup(placement: .status) {

@@ -42,7 +42,7 @@ struct DetailPokemonView: View {
 
     private var headerBlock: some View {
         VStack {
-            Text("Hi👋, i'am")
+            Text("Hi👋, I'm")
                 .font(.largeTitle)
                 .fontWeight(.thin)
 
@@ -113,7 +113,7 @@ struct DetailPokemonView: View {
                 text: viewModel.isDefault
             )
             getCustomNeonTextBy(
-                title: "Ability's:",
+                title: "Abilities:",
                 text: viewModel.ability
             )
         }
