@@ -22,7 +22,7 @@ final class DetailPokemonViewModel: ObservableObject {
     @Published private(set) var imageUrl: URL?
 
     var showImageBlock: Bool {
-        return imageUrl == nil
+        return imageUrl != nil
     }
 
     init(
