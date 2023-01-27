@@ -20,7 +20,10 @@ struct DetailPokemonView: View {
                 VStack(spacing: 24) {
                     headerBlock
                     aboutBlock
-                    imageBlock
+
+                    if viewModel.imageUrl != nil {
+                        imageBlock
+                    }
 
                     Spacer()
                 }
@@ -127,14 +130,17 @@ extension DetailPokemonView {
         text: String,
         closerText: String = ""
     ) -> some View {
-        return HStack {
-            Text(title)
+        VStack {
+            Divider()
+            HStack {
+                Text(title)
 
-            Text(text)
-                .bold()
-                .shadow(color: .cyan.opacity(0.3), radius: 5)
+                Text(text)
+                    .bold()
+                    .shadow(color: .cyan.opacity(0.3), radius: 5)
 
-            Text(closerText)
+                Text(closerText)
+            }
         }
     }
 }
@@ -145,7 +151,7 @@ struct DetailPokemonView_Previews: PreviewProvider {
             viewModel: DetailPokemonViewModel(
                 service: NetworkDataService(),
                 name: "bulbasaur",
-                url: "https://pokeapi.co/api/v2/pokemon/1/"
+                url: "https://pokeapi.co/api/v2/pokemon/17/"
             )
         )
     }
