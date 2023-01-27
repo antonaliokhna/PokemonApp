@@ -21,6 +21,10 @@ final class DetailPokemonViewModel: ObservableObject {
     @Published private(set) var isDefault: String = ""
     @Published private(set) var imageUrl: URL?
 
+    var showImageBlock: Bool {
+        return imageUrl == nil
+    }
+
     init(
         service: NetworkDataService,
         name: String,

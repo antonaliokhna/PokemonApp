@@ -21,10 +21,9 @@ struct DetailPokemonView: View {
                     headerBlock
                     aboutBlock
 
-                    if viewModel.imageUrl != nil {
+                    if viewModel.showImageBlock {
                         imageBlock
                     }
-
                     Spacer()
                 }
                 .padding()
