@@ -70,7 +70,7 @@ struct DetailPokemonView: View {
 
     private var imageBlock: some View {
         VStack {
-            Text("My photo 😇")
+            Text("My photo 🫠")
                 .font(.title)
                 .fontWeight(.thin)
 
