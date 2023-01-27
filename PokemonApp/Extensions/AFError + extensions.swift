@@ -16,6 +16,10 @@ extension AFError {
             networkError = .invalidURL
         case .sessionTaskFailed(URLError.notConnectedToInternet):
             networkError = .internetConnectionFailed
+        case .sessionTaskFailed(URLError.networkConnectionLost):
+            networkError = .internetConnectionFailed
+        case .sessionTaskFailed(URLError.cannotConnectToHost):
+           networkError = .internetConnectionFailed
         case .sessionTaskFailed(URLError.timedOut):
             networkError = .requestTimeOut
         default:

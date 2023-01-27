@@ -20,7 +20,7 @@ extension NetworkError: LocalizedError {
         let description: String
         switch self {
         case .requestFailed(let statusCode):
-            description = "Request execution error \(statusCode ?? 418)."
+            description = "Request execution error (\(statusCode ?? 418)). Please try again later, or contact the developer."
         case .invalidURL:
             description = "Error when trying to execute a link request. Please contact the developer."
         case .requestTimeOut:
