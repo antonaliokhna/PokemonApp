@@ -33,6 +33,6 @@ extension DetailPokemonModel {
     }
 
     struct Sprites: Codable {
-        let frontDefault: URL
+        let frontDefault: URL?
     }
 }
