@@ -99,12 +99,12 @@ struct DetailPokemonView: View {
             getCustomNeonTextBy(
                 title: "Weight:",
                 text: viewModel.weight,
-                closerText: "kg"
+                closerText: "cm"
             )
             getCustomNeonTextBy(
                 title: "Height:",
                 text: viewModel.height,
-                closerText: "cm"
+                closerText: "kg"
             )
             getCustomNeonTextBy(
                 title: "Default:",
@@ -117,7 +117,6 @@ struct DetailPokemonView: View {
         }
         .font(.body)
         .fontWeight(.light)
-        .multilineTextAlignment(.center)
     }
 }
 
