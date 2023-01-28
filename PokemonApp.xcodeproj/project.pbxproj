@@ -44,6 +44,7 @@
 		64CD1DE42985344B00BCE3BA /* PokemonListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CD1DE32985344B00BCE3BA /* PokemonListViewModelTests.swift */; };
 		64CD1DEF298538F200BCE3BA /* MockNetworkDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CD1DEE298538F200BCE3BA /* MockNetworkDataService.swift */; };
 		64CD1DF12985464600BCE3BA /* DetailPokemonViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CD1DF02985464600BCE3BA /* DetailPokemonViewModelTests.swift */; };
+		64CD1DF92985CD0100BCE3BA /* PokemonListModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CD1DF82985CD0100BCE3BA /* PokemonListModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		64CD1DE32985344B00BCE3BA /* PokemonListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListViewModelTests.swift; sourceTree = "<group>"; };
 		64CD1DEE298538F200BCE3BA /* MockNetworkDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkDataService.swift; sourceTree = "<group>"; };
 		64CD1DF02985464600BCE3BA /* DetailPokemonViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPokemonViewModelTests.swift; sourceTree = "<group>"; };
+		64CD1DF82985CD0100BCE3BA /* PokemonListModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,6 +308,7 @@
 		64CD1DE22985344B00BCE3BA /* PokemonAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				64CD1DF72985CCC400BCE3BA /* Model */,
 				64CD1DEC2985352100BCE3BA /* ViewModels */,
 			);
 			path = PokemonAppTests;
@@ -318,6 +321,14 @@
 				64CD1DF02985464600BCE3BA /* DetailPokemonViewModelTests.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		64CD1DF72985CCC400BCE3BA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				64CD1DF82985CD0100BCE3BA /* PokemonListModelTests.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -464,6 +475,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64CD1DF92985CD0100BCE3BA /* PokemonListModelTests.swift in Sources */,
 				64CD1DF12985464600BCE3BA /* DetailPokemonViewModelTests.swift in Sources */,
 				64CD1DEF298538F200BCE3BA /* MockNetworkDataService.swift in Sources */,
 				64CD1DE42985344B00BCE3BA /* PokemonListViewModelTests.swift in Sources */,
