@@ -26,7 +26,7 @@ final class PokemonListViewModelTests: XCTestCase {
         try super.tearDownWithError()
     }
 
-    func testIncrementPageWhenSwitchRightPageByEnumValue() throws {
+    func testIncrementPageWhenSwitchRightPageByEnumValue() {
         let currentPage = sut.currentPage
         let result = currentPage + 1
 
@@ -36,7 +36,7 @@ final class PokemonListViewModelTests: XCTestCase {
     }
 
 
-    func testDecrementPageWhenSwitchLeftPageByEnumValue() throws {
+    func testDecrementPageWhenSwitchLeftPageByEnumValue() {
         let currentPage = sut.currentPage
         let result = currentPage + -1
 
@@ -45,7 +45,7 @@ final class PokemonListViewModelTests: XCTestCase {
         XCTAssert(sut.currentPage == result, "The page was not switched to the left!")
     }
 
-    func testLoadPokemonsDataFromMockNetworkService() async throws {
+    func testLoadPokemonsDataFromMockNetworkService() async {
         let resultCount = 5
         let resultStatus = RequestStatuses.sucsess
 
@@ -64,7 +64,7 @@ final class PokemonListViewModelTests: XCTestCase {
         )
     }
 
-    func testChangeRequestStatusWhenReloadPokemonsData() throws {
+    func testChangeRequestStatusWhenReloadPokemonsData() {
         let resultRequestStatus = RequestStatuses.loading
 
         sut.reloadData()
@@ -72,6 +72,28 @@ final class PokemonListViewModelTests: XCTestCase {
         XCTAssert(
             sut.status == resultRequestStatus,
             "Request status has not changed to 'loading'"
+        )
+    }
+
+    func testPreviousButtonDisableReturnTrueWhenCurrentPageEqualsOne() {
+        let resultDisabledButton = true
+
+        let sutResult = sut.previousButtonDisable
+
+        XCTAssert(
+            sutResult == resultDisabledButton,
+            "Previous button does not disabled"
+        )
+    }
+
+    func testNextButtonDisableReturnTrueWhenCurrentPageIsGreaterThanOrEqualOne() {
+        let resultDisabledButton = true
+
+        let sutResult = sut.nextButtonDisable
+
+        XCTAssert(
+            sutResult == resultDisabledButton,
+            "Next button does not disabled"
         )
     }
 
