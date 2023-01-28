@@ -42,6 +42,7 @@
 		6444F83C2983068500879DCB /* CustomNeonViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6444F83B2983068500879DCB /* CustomNeonViewModifier.swift */; };
 		64CD1DDC29852C3E00BCE3BA /* NetworkDataServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CD1DDB29852C3E00BCE3BA /* NetworkDataServiceType.swift */; };
 		64CD1DE42985344B00BCE3BA /* PokemonListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CD1DE32985344B00BCE3BA /* PokemonListViewModelTests.swift */; };
+		64CD1DEF298538F200BCE3BA /* MockNetworkDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CD1DEE298538F200BCE3BA /* MockNetworkDataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		64CD1DDB29852C3E00BCE3BA /* NetworkDataServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataServiceType.swift; sourceTree = "<group>"; };
 		64CD1DE12985344B00BCE3BA /* PokemonAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokemonAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		64CD1DE32985344B00BCE3BA /* PokemonListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListViewModelTests.swift; sourceTree = "<group>"; };
+		64CD1DEE298538F200BCE3BA /* MockNetworkDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkDataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 			children = (
 				6444F7DA2981256B00879DCB /* PokemonApp */,
 				64CD1DE22985344B00BCE3BA /* PokemonAppTests */,
+				64CD1DEE298538F200BCE3BA /* MockNetworkDataService.swift */,
 				6444F7D92981256B00879DCB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -458,6 +461,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64CD1DEF298538F200BCE3BA /* MockNetworkDataService.swift in Sources */,
 				64CD1DE42985344B00BCE3BA /* PokemonListViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
