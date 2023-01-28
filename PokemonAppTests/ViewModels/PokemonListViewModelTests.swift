@@ -53,7 +53,7 @@ final class PokemonListViewModelTests: XCTestCase {
 
         XCTAssert(
             mockNetworkService.fetchPreviewPokemonListByPageCalled,
-                  "The mock download method has not been executed"
+            "The mock download method has not been executed"
         )
         XCTAssert(sut.status == resultStatus,
                   "The method of loading pokemon ended in an error"
