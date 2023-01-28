@@ -32,7 +32,10 @@ final class PokemonListViewModelTests: XCTestCase {
 
         sut.switchPage(side: .right)
 
-        XCTAssert(sut.currentPage == result, "The page was not switched to the right!")
+        XCTAssert(
+            sut.currentPage == result,
+            "The page was not switched to the right!"
+        )
     }
 
 
@@ -42,7 +45,10 @@ final class PokemonListViewModelTests: XCTestCase {
 
         sut.switchPage(side: .left)
 
-        XCTAssert(sut.currentPage == result, "The page was not switched to the left!")
+        XCTAssert(
+            sut.currentPage == result,
+            "The page was not switched to the left!"
+        )
     }
 
     func testLoadPokemonsDataFromMockNetworkService() async {
@@ -55,8 +61,9 @@ final class PokemonListViewModelTests: XCTestCase {
             mockNetworkService.fetchPreviewPokemonListByPageCalled,
             "The mock download method has not been executed"
         )
-        XCTAssert(sut.status == resultStatus,
-                  "The method of loading pokemon ended in an error"
+        XCTAssert(
+            sut.status == resultStatus,
+            "The method of loading pokemon ended in an error"
         )
         XCTAssert(
             sut.pokemonModel.count == resultCount,
