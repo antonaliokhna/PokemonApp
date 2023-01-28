@@ -26,7 +26,7 @@ final class PokemonListViewModelTests: XCTestCase {
         try super.tearDownWithError()
     }
 
-    func testSwitchRightPageByEnumValue() throws {
+    func testIncrementPageWhenSwitchRightPageByEnumValue() throws {
         let currentPage = sut.currentPage
         let result = currentPage + 1
 
@@ -36,7 +36,7 @@ final class PokemonListViewModelTests: XCTestCase {
     }
 
 
-    func testSwitchLeftPageByEnumValue() throws {
+    func testDecrementPageWhenSwitchLeftPageByEnumValue() throws {
         let currentPage = sut.currentPage
         let result = currentPage + -1
 
@@ -61,6 +61,17 @@ final class PokemonListViewModelTests: XCTestCase {
         XCTAssert(
             sut.pokemonModel.count == resultCount,
             "The number of pokemon obtained is not equal to 5"
+        )
+    }
+
+    func testChangeRequestStatusWhenReloadPokemonsData() throws {
+        let resultRequestStatus = RequestStatuses.loading
+
+        sut.reloadData()
+
+        XCTAssert(
+            sut.status == resultRequestStatus,
+            "Request status has not changed to 'loading'"
         )
     }
 
