@@ -47,6 +47,7 @@
 		64CD1DF92985CD0100BCE3BA /* PokemonListModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CD1DF82985CD0100BCE3BA /* PokemonListModelTests.swift */; };
 		64CD1DFB2985D1D700BCE3BA /* DetailPokemonModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CD1DFA2985D1D700BCE3BA /* DetailPokemonModelTests.swift */; };
 		64CD1DFD2985D7E900BCE3BA /* DataFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CD1DFC2985D7E900BCE3BA /* DataFetcherTests.swift */; };
+		64CD1DFF2985D87A00BCE3BA /* MockDataFetcherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CD1DFE2985D87A00BCE3BA /* MockDataFetcherService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		64CD1DF82985CD0100BCE3BA /* PokemonListModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListModelTests.swift; sourceTree = "<group>"; };
 		64CD1DFA2985D1D700BCE3BA /* DetailPokemonModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPokemonModelTests.swift; sourceTree = "<group>"; };
 		64CD1DFC2985D7E900BCE3BA /* DataFetcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcherTests.swift; sourceTree = "<group>"; };
+		64CD1DFE2985D87A00BCE3BA /* MockDataFetcherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataFetcherService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -315,6 +317,7 @@
 				64CD1DF72985CCC400BCE3BA /* Model */,
 				64CD1DEC2985352100BCE3BA /* ViewModels */,
 				64CD1DFC2985D7E900BCE3BA /* DataFetcherTests.swift */,
+				64CD1DFE2985D87A00BCE3BA /* MockDataFetcherService.swift */,
 			);
 			path = PokemonAppTests;
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 				64CD1DFD2985D7E900BCE3BA /* DataFetcherTests.swift in Sources */,
 				64CD1DEF298538F200BCE3BA /* MockNetworkDataService.swift in Sources */,
 				64CD1DE42985344B00BCE3BA /* PokemonListViewModelTests.swift in Sources */,
+				64CD1DFF2985D87A00BCE3BA /* MockDataFetcherService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
