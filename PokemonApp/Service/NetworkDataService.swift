@@ -18,14 +18,10 @@ final class NetworkDataService {
     ) {
         self.dataFetcher = dataFetcher
     }
+}
 
-    func fetchDetailPokemonBy(url: String) async throws -> DetailPokemonModel {
-        return try await self.dataFetcher.fetchGenericData(
-            url: url,
-            parameters: [:]
-        )
-    }
-
+//MARK: NetworkDataServiceType
+extension NetworkDataService: NetworkDataServiceType {
     func fetchPreviewPokemonListBy(page: Int) async throws -> PokemonListModel {
         let url = "https://pokeapi.co/api/v2/pokemon"
 
@@ -37,6 +33,13 @@ final class NetworkDataService {
         return try await dataFetcher.fetchGenericData(
             url: url,
             parameters: parameters
+        )
+    }
+
+    func fetchDetailPokemonBy(url: String) async throws -> DetailPokemonModel {
+        return try await self.dataFetcher.fetchGenericData(
+            url: url,
+            parameters: [:]
         )
     }
 }

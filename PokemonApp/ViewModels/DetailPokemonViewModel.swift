@@ -9,7 +9,7 @@ import Foundation
 
 final class DetailPokemonViewModel: ObservableObject {
 
-    private let networkService: NetworkDataService
+    private let networkService: NetworkDataServiceType
     private let url: String
 
     @Published private(set) var status: RequestStatuses = .loading
@@ -26,7 +26,7 @@ final class DetailPokemonViewModel: ObservableObject {
     }
 
     init(
-        service: NetworkDataService,
+        service: NetworkDataServiceType,
         name: String,
         url: String
     ) {

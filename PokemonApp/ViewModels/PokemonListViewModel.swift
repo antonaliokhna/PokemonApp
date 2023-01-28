@@ -9,7 +9,7 @@ import Foundation
 
 final class PokemonListViewModel: ObservableObject {
 
-    private(set) var networkService: NetworkDataService = NetworkDataService()
+    private(set) var networkService: NetworkDataServiceType
 
     @Published private(set) var currentPage: Int = 1
     @Published private(set) var countPages: Int = 1
@@ -22,6 +22,10 @@ final class PokemonListViewModel: ObservableObject {
 
     var nextButtonDisable: Bool {
         return currentPage >= countPages || pokemonModel.count == 0
+    }
+
+    init(networkService: NetworkDataServiceType = NetworkDataService()) {
+        self.networkService = networkService
     }
 }
 
