@@ -27,7 +27,7 @@ final class DetailPokemonModelTests: XCTestCase {
             abilities: [
                 .init(ability: .init(name: "blaze")),
                 .init(ability: .init(name: "solar-power")),
-              ]
+            ]
         )
     }
 

@@ -11,10 +11,10 @@ import Foundation
 class MockNetworkDataService: NetworkDataServiceType {
     var fetchPreviewPokemonListByPageCalled: Bool = false
     var fetchDetailPokemonByUrlCalled: Bool = false
-
+    
     func fetchPreviewPokemonListBy(page: Int) async throws -> PokemonListModel {
         fetchPreviewPokemonListByPageCalled = true
-
+        
         return PokemonListModel(
             count: 5,
             results: [
@@ -26,10 +26,10 @@ class MockNetworkDataService: NetworkDataServiceType {
             ]
         )
     }
-
+    
     func fetchDetailPokemonBy(url: String) async throws -> DetailPokemonModel {
         fetchDetailPokemonByUrlCalled = true
-
+        
         return DetailPokemonModel(
             name: "charizard",
             height: 17,
@@ -43,7 +43,7 @@ class MockNetworkDataService: NetworkDataServiceType {
             abilities: [
                 .init(ability: .init(name: "blaze")),
                 .init(ability: .init(name: "solar-power")),
-              ]
+            ]
         )
     }
 }
