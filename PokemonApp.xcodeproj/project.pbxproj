@@ -340,11 +340,11 @@
 		64CD1DE22985344B00BCE3BA /* PokemonAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				644DCD1E2986853100C3E330 /* Extensions */,
-				644DCD1B298682D200C3E330 /* DataFetcher */,
 				644DCD162986825800C3E330 /* Mock */,
-				64CD1DF72985CCC400BCE3BA /* Model */,
 				64CD1DEC2985352100BCE3BA /* ViewModels */,
+				64CD1DF72985CCC400BCE3BA /* Model */,
+				644DCD1B298682D200C3E330 /* DataFetcher */,
+				644DCD1E2986853100C3E330 /* Extensions */,
 			);
 			path = PokemonAppTests;
 			sourceTree = "<group>";

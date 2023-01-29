@@ -8,7 +8,7 @@
 import Foundation
 @testable import PokemonApp
 
-class MockDataFetcherService: DataFetcherServiceType {
+final class MockDataFetcherService: DataFetcherServiceType {
     var fetchCalled: Bool = false
     var returnData: Data = Data(count: 0)
 

@@ -8,7 +8,7 @@
 import Foundation
 @testable import PokemonApp
 
-class MockNetworkDataService: NetworkDataServiceType {
+final class MockNetworkDataService: NetworkDataServiceType {
     var fetchPreviewPokemonListByPageCalled: Bool = false
     var fetchDetailPokemonByUrlCalled: Bool = false
 

@@ -11,8 +11,8 @@ import XCTest
 @testable import PokemonApp
 
 final class DetailPokemonViewModelTests: XCTestCase {
-    var sut: DetailPokemonViewModel!
-    var mockNetworkService: MockNetworkDataService!
+    private var sut: DetailPokemonViewModel!
+    private var mockNetworkService: MockNetworkDataService!
     
     override func setUpWithError() throws {
         try super.setUpWithError()

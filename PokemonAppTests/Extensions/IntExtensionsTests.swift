@@ -2,7 +2,7 @@ import XCTest
 @testable import PokemonApp
 
 final class IntExtensionsTests: XCTestCase {
-    var sut: Int!
+    private var sut: Int!
 
     override func setUpWithError() throws {
         try super.setUpWithError()

@@ -9,8 +9,8 @@ import XCTest
 @testable import PokemonApp
 
 final class DataFetcherTests: XCTestCase {
-    var sut: DataFetcher!
-    var mockService: MockDataFetcherService!
+    private var sut: DataFetcher!
+    private var mockService: MockDataFetcherService!
 
     override func setUpWithError() throws {
         try super.setUpWithError()
@@ -26,7 +26,7 @@ final class DataFetcherTests: XCTestCase {
         try super.tearDownWithError()
     }
 
-    func testFetchGenericDataMethodCalled() async {
+    private func testFetchGenericDataMethodCalled() async {
         do {
             let _: PokemonListModel =
             try await sut.fetchGenericData(

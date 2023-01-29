@@ -9,7 +9,7 @@ import XCTest
 @testable import PokemonApp
 
 final class DetailPokemonModelTests: XCTestCase {
-    var sut: DetailPokemonModel!
+    private var sut: DetailPokemonModel!
 
     override func setUpWithError() throws {
         try super.setUpWithError()
