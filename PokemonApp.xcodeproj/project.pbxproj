@@ -43,6 +43,7 @@
 		644DCD182986826300C3E330 /* MockDataFetcherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644DCD172986826300C3E330 /* MockDataFetcherService.swift */; };
 		644DCD1A298682BC00C3E330 /* MockNetworkDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644DCD19298682BC00C3E330 /* MockNetworkDataService.swift */; };
 		644DCD1D2986834900C3E330 /* DataFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644DCD1C2986834900C3E330 /* DataFetcherTests.swift */; };
+		644DCD202986853D00C3E330 /* IntExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644DCD1F2986853D00C3E330 /* IntExtensionsTests.swift */; };
 		64CD1DDC29852C3E00BCE3BA /* NetworkDataServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CD1DDB29852C3E00BCE3BA /* NetworkDataServiceType.swift */; };
 		64CD1DE42985344B00BCE3BA /* PokemonListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CD1DE32985344B00BCE3BA /* PokemonListViewModelTests.swift */; };
 		64CD1DF12985464600BCE3BA /* DetailPokemonViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CD1DF02985464600BCE3BA /* DetailPokemonViewModelTests.swift */; };
@@ -97,6 +98,7 @@
 		644DCD172986826300C3E330 /* MockDataFetcherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataFetcherService.swift; sourceTree = "<group>"; };
 		644DCD19298682BC00C3E330 /* MockNetworkDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkDataService.swift; sourceTree = "<group>"; };
 		644DCD1C2986834900C3E330 /* DataFetcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcherTests.swift; sourceTree = "<group>"; };
+		644DCD1F2986853D00C3E330 /* IntExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtensionsTests.swift; sourceTree = "<group>"; };
 		64CD1DDB29852C3E00BCE3BA /* NetworkDataServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataServiceType.swift; sourceTree = "<group>"; };
 		64CD1DE12985344B00BCE3BA /* PokemonAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokemonAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		64CD1DE32985344B00BCE3BA /* PokemonListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListViewModelTests.swift; sourceTree = "<group>"; };
@@ -327,9 +329,18 @@
 			path = DataFetcher;
 			sourceTree = "<group>";
 		};
+		644DCD1E2986853100C3E330 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				644DCD1F2986853D00C3E330 /* IntExtensionsTests.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		64CD1DE22985344B00BCE3BA /* PokemonAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				644DCD1E2986853100C3E330 /* Extensions */,
 				644DCD1B298682D200C3E330 /* DataFetcher */,
 				644DCD162986825800C3E330 /* Mock */,
 				64CD1DF72985CCC400BCE3BA /* Model */,
@@ -501,6 +512,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				64CD1DF92985CD0100BCE3BA /* PokemonListModelTests.swift in Sources */,
+				644DCD202986853D00C3E330 /* IntExtensionsTests.swift in Sources */,
 				644DCD1D2986834900C3E330 /* DataFetcherTests.swift in Sources */,
 				644DCD182986826300C3E330 /* MockDataFetcherService.swift in Sources */,
 				644DCD1A298682BC00C3E330 /* MockNetworkDataService.swift in Sources */,
